@@ -8,15 +8,6 @@
 
     }
     @media screen and (min-width:768) and (max-width:1023){
-    	header .store1{
-    		background-color: #ffffff; 
-			padding: 20px;
-    	}
-    	header .store1::after{
-        	content: "";
-        	clear: both;
-        	display: table;
-    	}
         header{
             position: fixed;
         }
@@ -95,33 +86,24 @@
         height: 100vh;
     }
 
-    header .store1{
-        background-color: #a87d7d; 
-        padding: 20px;
-    }
-    header .store1::after{
-        content: "";
-        clear: both;
-        display: table;
-    }
     /* Footer for store 1*/
-   	.store1::after{
+   	footer .store1::after{
    		content: "";
         clear: both;
         display: table;
    	}
-   	.store1{
+   	footer .store1{
    		background-color: blue;
    	}
    	/* End of Footer for store 1*/
 
 	/* Footer for store 2*/
-   	.store2::after{
+   	footer .store2::after{
    		content: "";
         clear: both;
         display: table;
    	}
-   	.store2{
+   	footer .store2{
    		background-color: green;
    	}
    	/* End of Footer for store 1*/
