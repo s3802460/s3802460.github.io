@@ -1,8 +1,8 @@
     :root{
         --header: #58b3cc;
         --footer: #e75555;
-        --main: #5bd03b;
-        --item: #e0db36;
+        --main: #b3fcf5;
+        --item: #ffffff;
     }
     @media screen and (max-width:767){
 
