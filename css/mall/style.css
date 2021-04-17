@@ -8,6 +8,15 @@
 
     }
     @media screen and (min-width:768) and (max-width:1023){
+    	header .store1{
+    		background-color: #ffffff; 
+			padding: 20px;
+    	}
+    	header .store1::after{
+        	content: "";
+        	clear: both;
+        	display: table;
+    	}
         header{
             position: fixed;
         }
@@ -84,6 +93,16 @@
     body{
         width: 100vw;
         height: 100vh;
+    }
+
+    header .store1{
+        background-color: #a87d7d; 
+        padding: 20px;
+    }
+    header .store1::after{
+        content: "";
+        clear: both;
+        display: table;
     }
     /* Footer for store 1*/
    	.store1::after{
