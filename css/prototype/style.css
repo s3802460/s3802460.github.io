@@ -1,0 +1,699 @@
+    :root{
+        --header: #58b3cc;
+        --footer: #e75555;
+        --main: #5bd03b;
+        --item: #e0db36;
+    }
+
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    body{
+        width: 100vw;
+        height: 100vh;
+    }
+    /* Header */
+    header{
+        background-color: var(--header);
+    }
+    header .logo{
+        width: 10%;
+        text-align: center;
+        padding-top: 30px;
+        float: left;
+    }
+    header .logo img{
+        width: 100px;
+        height: 100px;
+    }
+    header nav{
+        width: 80%;
+        padding: 5%;
+        float: left;
+    }
+
+    header nav ul{
+        list-style: none;
+    }
+    header nav ul li{
+        margin-right: 20px;
+        padding-right: 20px;
+        border-right: 2px solid white;
+        display: inline-block;
+    }
+    header nav ul li a{
+        color: white;
+        text-decoration: none;
+        font-size: 28px;
+    }
+    header nav ul>li{
+        position: relative;
+    }
+    header nav ul>li>ul{
+        display: none;
+        position: absolute;
+        background-color: black;
+        /* margin-top: 10px; */
+        width: 400px;
+        list-style: none;
+        left: -25px;
+    }
+    header nav ul>li>ul>li{
+        border: none;
+        margin: 20px;
+        /* border-bottom: 1px solid white; */
+    }
+    header nav ul>li:hover>ul,header nav ul>li>ul:hover{
+        display: block;
+    }
+    header .hamburger{
+        display: none;
+        margin-left: 15%;
+        margin-top: 30%;
+        padding: 0;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+    header .hamburger>div{
+        position: relative;
+        /* top: 15px; */
+        width: 30px;
+        /* height: 1px; */
+        margin-top: 5px;
+        border-top:3px solid white ;
+    }
+    
+    @media screen and (min-width: 1024px) {
+        
+    }
+    @media screen and (max-width: 1023px) {
+        header{
+            position: fixed;
+        }
+        /* header:active{
+            background-color: red;
+        } */
+        header:active nav{
+            /* position: absolute; */
+            /* z-index: 999; */
+            /* width: 200%; */
+            display: block;
+        }
+        header:hover{
+            z-index: 9999;
+            width: 50%;
+        }
+        header:hover nav{
+            /* position: absolute; */
+            /* width: 200%; */
+            display: block;
+        }
+        header .hamburger{
+            display: block;
+        }
+
+        header .logo{
+            width: 50px;
+            height: 50px;
+            clear: both;
+            padding: 0;
+            margin: 0;
+        }
+        header .logo img{
+            display: none;
+            width: 50px;
+            height: 50px;
+        }
+        header nav{
+            display: none;
+            clear: both;
+        }
+        header nav ul li{
+            display: block;
+            width: 100%;
+            border: none;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        header nav ul>li>ul{
+            position: relative;
+            left: 5%;
+            transition: display 1s ease-in;
+        }
+        header nav ul>li>ul>li{
+            width: 100%;
+        }
+
+    }
+    @media screen and (max-width: 767px) {
+        
+    }
+    /* End of header */
+
+
+
+    /* Footer */
+    footer{
+        background-color: var(--footer);
+        text-align: center;
+    }
+    footer nav ul{
+        list-style: none;
+    }
+    footer nav ul li{
+        display: inline-block;
+        margin-right: 10px;
+    }
+    footer nav ul li a{
+        text-decoration: none;
+        color: white;
+    }
+    /* End of footer */
+
+
+
+    /* Main Body */
+    main{
+        width: 100vw;
+        height: auto;
+        background-color: var(--main);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px;
+    }
+    main div{
+        width: 90%;
+        margin: 20px;
+        padding: 10px;
+        background-color: var(--item);
+    }
+    main div h3{
+        font-size: 32px;
+        font-family: fantasy,sans-serif;
+        font-weight: 100;
+        text-align: center;
+        letter-spacing: 8px;
+    }
+    /* New store */
+    main .new-store{
+        padding: 50px 0 0 0;
+    }
+    main .new-store h3{
+        
+    }
+    main .new-store .row{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        overflow: auto;
+    }
+    main .new-store .row .item{
+        width: 300px;
+    }
+    main .new-store .row .item .logo{
+        background-color: white;
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+    }
+    main .new-store .row .item .logo img{
+        width: 150px;
+        height: auto;
+        margin-left: 50%;
+        margin-top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    main .new-store .row .item .content a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        font-family: monospace;
+    }
+    /* End of new store */
+
+    /* New product */
+    main .new-product{
+        padding: 50px 0 0 0;
+    }
+    main .new-product .row{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        overflow: auto;
+    }
+    main .new-product .row .item h5{
+        font-size: 25px;
+        font-family: serif;
+        color: black;
+        text-align: center;
+    }
+    main .new-product .row .item .img{
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        overflow: hidden;
+    }
+    main .new-product .row .item .img img{
+        width: 150px;
+        height: auto;
+        margin-left: 50%;
+        margin-top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    main .new-product .row .item .content{
+        padding: 0;
+        margin: 0;
+    }
+    main .new-product .row .item .content .price{
+        position: relative;
+        font-family: monospace;
+        font-size: 20px;
+        font-weight: bold;
+        padding-left: 100px;
+        margin-top: -10px;
+    }
+    main .new-product .row .item .content .price::before{
+        content: "Price :";
+        color: black;
+        position: absolute;
+        left: 5px;
+        bottom: 10px;
+    }
+    main .new-product .row .item .content .store{
+        position: relative;
+        font-size: 15px;
+        padding-left: 100px;
+        margin-top: -30px;
+        overflow: auto;
+    }
+    main .new-product .row .item .content .store::before{
+        content: "Available at :";
+        color: black;
+        position: absolute;
+        left: 5px;
+        bottom: 10px;
+    }
+    main .new-product .row .item .content .store a{
+        text-decoration: none;
+        color: black;
+    }
+    /* End of new product */
+
+    /* Featured store */
+    main .featured-store{
+        padding: 50px 0 0 0;
+    }
+    main .featured-store h3{
+        
+    }
+    main .featured-store .row{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        overflow: auto;
+    }
+    main .featured-store .row .item{
+        width: 300px;
+    }
+    main .featured-store .row .item .logo{
+        background-color: white;
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+    }
+    main .featured-store .row .item .logo img{
+        width: 150px;
+        height: auto;
+        margin-left: 50%;
+        margin-top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    main .featured-store .row .item .content a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        font-family: monospace;
+    }
+    /* End of featured store */
+
+    /* Featured product */
+    main .featured-product{
+        padding: 50px 0 0 0;
+    }
+    main .featured-product .row{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        overflow: auto;
+    }
+    main .featured-product .row .item h5{
+        font-size: 25px;
+        font-family: serif;
+        color: black;
+        text-align: center;
+    }
+    main .featured-product .row .item .img{
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        overflow: hidden;
+    }
+    main .featured-product .row .item .img img{
+        width: 150px;
+        height: auto;
+        margin-left: 50%;
+        margin-top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    main .featured-product .row .item .content{
+        padding: 0;
+        margin: 0;
+    }
+    main .featured-product .row .item .content .price{
+        position: relative;
+        font-family: monospace;
+        font-size: 20px;
+        font-weight: bold;
+        padding-left: 100px;
+        margin-top: -10px;
+    }
+    main .featured-product .row .item .content .price::before{
+        content: "Price :";
+        color: black;
+        position: absolute;
+        left: 5px;
+        bottom: 10px;
+    }
+    main .featured-product .row .item .content .store{
+        position: relative;
+        font-size: 15px;
+        padding-left: 100px;
+        margin-top: -30px;
+        overflow: auto;
+    }
+    main .featured-product .row .item .content .store::before{
+        content: "Available at :";
+        color: black;
+        position: absolute;
+        left: 5px;
+        bottom: 10px;
+    }
+    main .featured-product .row .item .content .store a{
+        text-decoration: none;
+        color: black;
+    }
+    /* End of featured product */
+
+    /* About us */
+    main .members .row{
+        /* background-color: violet; */
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        margin-left: 50%;
+        transform: translate(-50%,0);
+        overflow: auto;
+    }
+    main .members .member{
+        display: inline-block;
+        width: 500px;
+        height: 600px;
+        /* border-right: 1px solid black;
+        border-left: 1px solid black; */
+    }
+    main .members .member img{
+        width: 200px;
+        background-color: white;
+    }
+    /* End of about us */
+
+    /* Copyright, Term of service, Private policy */
+    main ol{
+        list-style: none;
+    }
+    main ol li{
+        padding: 5px;
+        margin-bottom: 30px;
+    }
+    main ol li h3{
+        font-family: sans-serif;
+        font-size: 30px;
+        letter-spacing: normal;
+        text-align: start;
+    }
+    /* End of copyright, Term of service, Private policy */
+
+    /* Fees */
+    main .table{
+        width: auto;
+        margin-left: 52%;
+        box-sizing: unset;
+        transform: translateX(-50%);
+    }
+    main div table{
+        border-collapse: collapse;
+        table-layout: auto;
+        border-right: 2px solid black ;
+        border-top: 2px solid black ;
+        margin: 0;
+    }
+    main div table td:first-of-type{
+        width: 150px;
+        text-align: center;
+    }
+    main div table td{
+        width: 300px;
+        text-align: center;
+        
+    }
+    main div table tr td{
+        border-bottom: 2px solid black;
+        border-left: 2px solid black;
+        padding: 30px;
+    }
+    main div table thead tr th{
+        border-bottom: 2px solid black;
+        border-left: 2px solid black;
+        padding: 20px 50px;
+    }
+    @media screen and (max-width: 1023px){
+        main div.fee{
+            width: 500px;
+        }
+        main .table{
+            margin-left: 40%;
+        }
+    }
+    /* End of fees */
+
+    /* FAQ */
+    main .question{
+        
+    }
+    main .question label{
+        font-size: 30px;
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+    }
+    main .question input{
+        font-size: 28px;
+        padding: 10px;
+        border-radius: 40px;
+        width: 60%;
+        margin-left: 50%;
+        transform: translate(-50%,0);
+    }
+    /* End of faq */
+
+    /* Contact */
+    main .contact form{
+        font-size: 15px;
+    }
+    main .contact form input[type='text'],input[type='email'],select{
+        width: 500px;
+        padding: 10px;
+        border-radius: 40px;
+    }
+    main .contact form div label{
+        display: inline-block;
+        width: 200px;
+        position: relative;
+    }
+    main .contact form div label::after{
+        position: absolute;
+        content: ":";
+        right: 10px;
+    }
+    main .contact form div div{
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 110px;
+    }
+    main .contact form div div.mes{
+        display: block;
+        margin-top: 10px;
+    }
+    main .contact form button{
+        padding: 10px 30px;
+        margin: 0 20px;
+        border-radius: 40px;
+    }
+    main .contact form textarea{
+        width: 70vw;
+    }
+    @media screen and (max-width: 1023px){
+        main .contact form input[type='text'],input[type='email'],select{
+            display: block;
+            width: 90%;
+        }
+        main .contact form textarea{
+            width: 60vw;
+        }
+        main .contact form div label::after{
+            content: '';
+        }
+    }
+    /* End of contact */
+
+    /* Catagory store */
+    main .store{
+        padding: 50px 0 0 0;
+    }
+    main .store h3{
+        
+    }
+    main .store .row{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        overflow: auto;
+    }
+    main .store .row .item{
+        width: 300px;
+    }
+    main .store .row .item .logo{
+        background-color: white;
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+    }
+    main .store .row .item .logo img{
+        width: 150px;
+        height: auto;
+        margin-left: 50%;
+        margin-top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    main .store .row .item .content a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        font-family: monospace;
+    }
+    /* End of catagory store */
+    main .name_catagory label{
+        font-size: 20px;
+        display: inline-block;
+    }
+    main .name_catagory>div{
+        display: block;
+        margin-top: -10px;
+        flex-direction: row;
+    }
+    main .name_catagory>div>div{
+        width: 5px;
+        float: left;
+        text-align: center;
+        margin: 0 10px;
+        padding: 5px;
+    }
+    /* Catagory name */
+
+    /* End of catagory name */
+    /* Register */
+    main .register form{
+        font-size: 15px;
+    }
+    main .register form input[type='text'],input[type='email'],input[type=password],select{
+        width: 500px;
+        padding: 10px;
+        border-radius: 40px;
+    }
+    main .register form div label{
+        display: inline-block;
+        width: 200px;
+        position: relative;
+    }
+    main .register form div label::after{
+        position: absolute;
+        content: ":";
+        right: 10px;
+    }
+    main .register form div div{
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 110px;
+    }
+    main .register form button{
+        padding: 10px 30px;
+        margin: 0 20px;
+        border-radius: 40px;
+    }
+    @media screen and (max-width: 1023px){
+        main .register form input[type='text'],input[type='password'], input[type='email'],select{
+            display: block;
+            width: 90%;
+        }
+        main .register form div label::after{
+            content: '';
+        }
+    }
+    .register div[id='div1']{
+        overflow: inherit;
+    }
+    /* End of register */
+    /* Forget Password */
+    .recoverForm{
+        font-size: 15px;
+        width: 500px;
+        padding: 10px;
+        border-radius: 40px;
+    }
+    main .recover{
+        padding: 10px 30px;
+        margin: 0 20px;
+        border-radius: 40px;
+    }
+
+    @media screen and (max-width: 1023px){
+        main .recover form input[type='text']{
+            display: block;
+            width: 90%;
+        }
+        main .recover form div label::after{
+            content: '';
+        }
+    }
+    /* End of body */
+    /*@media screen and (max-width:767)
+    @media screen and (min-width:768) and (max-width:1023)
+    @media screen and (min-width:1024)*/
