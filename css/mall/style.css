@@ -638,7 +638,7 @@
     main .register form{
         font-size: 15px;
     }
-    main .register form input[type='text'],input[type='email'],input[type=password],select{
+    main .register form input[type='text'],input[type='email'],input[type=password]{
         width: 500px;
         padding: 10px;
         border-radius: 40px;
@@ -794,3 +794,38 @@
         color: white;
     }
     /*End of My cart page */
+
+    /*Login Page*/
+    main .login form{
+        font-size: 15px;
+    }
+    main .login form input[type='text'],input[type=password]{
+        width: 500px;
+        padding: 10px;
+        border-radius: 40px;
+    }
+    main .login form div label{
+        display: inline-block;
+        width: 200px;
+        position: relative;
+    }
+    main .login form div label::after{
+        position: absolute;
+        content: ":";
+        right: 10px;
+    }
+    main .login form div div{
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 110px;
+    }
+    main .login form button{
+        padding: 10px 30px;
+        margin: 0 20px;
+        border-radius: 40px;
+    }
+    main .login form div label::after{
+        content: '';
+    }
+    /* End of Login page*/
