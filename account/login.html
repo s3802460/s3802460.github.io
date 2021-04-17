@@ -2,9 +2,14 @@
 <html>    
 <head>    
     <title>Login Form</title>
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/mall/style.css">    
+    <title>Login</title>    
 	<style>
+		body{  
+            margin: 0;  
+            padding: 0;  
+            background-color:#58b3cc;  
+            font-family: sans-serif;  
+        }  
         .login{  
             width: 382px;  
             overflow: hidden;  
@@ -15,111 +20,69 @@
             border-radius: 15px ;  
            
         } 
-        .login input[type="text"], input[type="password"]{  
+        input[type="text"], input[type="password"]{  
             padding: 10px 30px;
             margin: 0 20px;
             border-radius: 40px;
         }  
-        .login h2{  
+        h2{  
             text-align: center;  
-            color: #277582;  
+            color: #ffffff;  
             padding: 20px;  
         }  
-        .login label{  
+        label{  
             font-size: 17px;  
         }  
         #log{    
             height: 30px;  
             border: none; 
-            color: rgba(6, 6, 10, 0.596);
+            color: rgb(126, 4, 4);
             width: 335px;
             padding: 10px;
             border-radius: 40px;      
         }  
-        .login span{  
-            color: rgb(59, 29, 29);  
+        span{  
+            color: rgb(17, 12, 12);  
             font-size: 17px;  
         }  
-        .login a{  
+        a{  
             float: right;  
         } 
-        .login a:hover{
-        color:rgb(31, 175, 43) }
+        a:hover{
+        color:rgba(34, 109, 37, 0.719) }
 	</style>   
 </head>    
-<body>
-    <!--Header-->    
-    <header class="clearfix">       
-        <div class="logo">
-            <div class="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <a href="../index.html"><img src="../img/logo.png" alt="logo"></a>
-        </div>
-        <nav class="">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../mall/about.html">About us</a></li>
-                <li><a href="../mall/fees.html">Fees</a></li>
-                <li><a href="../account/myaccount.html">My Account</a></li>
-                <li>
-                    <a href="#">Browse</a>
-                    <ul>
-                        <li><a href="../mall/browse_name.html">Browse Stores by Name</a></li>
-                        <li><a href="../mall/browse_catagory.html">Browse Stores by Category</a></li>
-                    </ul>
-                </li>
-                <li><a href="../mall/faq.html">FAQs</a></li>
-                <li><a href="../mall/contact.html">Contact</a></li>
-                 <li><a href="../account/login.html">Login</a></li>
-                <li><a href="../account/register.html">Register</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!--End of Header-->
-
+<body>    
+    <h2>Login Page</h2><br>
     <!--Body-->
     <main>  
-        <div class="login">
-            <h3>Login</h3>   
-            <form id="login" method="post" action="#">
-                <div>   
-                    <label><b>Username: </b></label>    
-                    <input type="text" name="Uname" id="Uname" placeholder="admin"><br><br>
-                </div>
-                <div>      
-                    <label><b>Password: </b></label>    
-                    <input type="Password" name="Pass" id="Pass" placeholder="admin"><br><br>
-                </div>
-                <div>   
-                    <input type="submit" name="log" id="log" value="Log In"></a><br><br>
-                </div>
-                <div>         
-                    <input type="checkbox" id="check">    
-                    <span>Remember me</span> 
-                </div>
-                <div>     
-                    <a href="../account/recover.html">Forgot Password?</a>
-                    <br><br>
-                    <a href="../account/register.html">Register</a>
-                </div>     
-            </form>    
-        </div>
+    <div class="login">    
+        <form id="login" method="post" action="../account/myaccount.html">
+            <div>   
+            <label><b>Username:     
+            </b>    
+            </label>    
+            <input type="text" name="Uname" id="Uname" placeholder="admin"><br><br>
+            </div>
+            <div>      
+            <label><b>Password: </b></label>    
+            <input type="Password" name="Pass" id="Pass" placeholder="admin"><br><br>
+            </div>
+            <div>   
+            <a href="../account/myaccount.html"><input type="submit" name="log" id="log" value="Log In"></a><br><br>
+            </div>
+            <div>         
+            <input type="checkbox" id="check">    
+            <span>Remember me</span> 
+            </div>
+            <div>     
+            <a href="../account/recover.html">Forgot Password?</a>
+            <br><br>
+            <a href="../account/register.html">Register</a>
+            </div>     
+        </form>     
+    </div>
     </main>
-    <!--End of Body-->
-    
-    <!-- Footer -->
-    <footer class="clearfix">
-        <nav>
-            <ul>
-                <li><a href="../mall/copyright.html">Copyright</a> </li>
-                <li><a href="../mall/termofservice.html">Term of service</a> </li>
-                <li><a href="../mall/privatepolicy.html">Private Policy</a> </li>
-            </ul>
-        </nav>
-    </footer>
-	<!-- End of Footer -->
+    <!--End of Body-->      
 </body>
 </html>
