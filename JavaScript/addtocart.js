@@ -40,7 +40,6 @@ function purchaseClicked() {
 //Get data from sessionStorage and add it to item rows
 function addItemToCart(){
     var cartRow = document.createElement('div');
-    cartRow.classList.add('cart-row');
     var cartItems = document.getElementsByClassName('cart-items')[0];
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
     for (var i = 0; i < cartItemNames.length; i++) {
@@ -53,8 +52,7 @@ function addItemToCart(){
     //Add new item row by html
     var cartRowContents = localStorage.getItem('cart')
     cartRow.innerHTML = cartRowContents;
-    console.log(cartRow);
-    cartItems.append(cartRowContents);
+    cartItems.append(cartRow);
     cartRow.getElementsByClassName('btn-remove')[0].addEventListener('click', removeCartItem);
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
 }
