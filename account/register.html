@@ -8,7 +8,6 @@
         <script src="../JavaScript/register.js">
             function hidetype(){}
             function showtype(){}
-            function numbertype(){}
             function check(){}
         </script>
     </head>
@@ -56,8 +55,7 @@
                 </div>
                 <div>
                 <label for="phone"><b>Phone number:</b></label>
-                <input type="text" id="phone" class="test_css" maxlength="16"  name="15" 
-                onkeypress="return numbertype(event);" required>
+                <input type="tel" id="phone" class="test_css" minlength="9" required>
                 </div>
                 <div>
                 <label for="password"><b>Password:</b></label>
