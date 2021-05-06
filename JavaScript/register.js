@@ -7,7 +7,7 @@ function showtype(){
 }
 
 //Check Retype Password 
-var check = function() {
+var retypePass = function() {
     if (document.getElementById("pass").value ==
         document.getElementById("confirmpass").value) {
         document.getElementById("correctPassword").style.color = 'green';
@@ -40,7 +40,7 @@ var validatePhone = function() {
 
 //Validate Email
 var validateEmail = function() {
-    emailPattern = /^\(?[a-z]?[A-Z]){3,})$/;
+    emailPattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{3,})$/;
     if (document.getElementById("email").value.match(emailPattern)) {
         document.getElementById("validEmail").style.color = 'green';
         document.getElementById("validEmail").innerHTML = 'Valid Email';
@@ -52,5 +52,13 @@ var validateEmail = function() {
 
 //Validate Password
 var validatePassword = function(){
-
+    passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,})$/;
+    if (document.getElementById("pass").value.match(passwordPattern)) {
+        document.getElementById("pdmsg").style.color = 'green';
+        document.getElementById("pdmsg").innerHTML = 'Strong Password';
+    } else {
+        document.getElementById("pdmsg").style.color = 'red';
+        document.getElementById("pdmsg").innerHTML = 'Weak Password';
+    }
+    retypePass();
 };

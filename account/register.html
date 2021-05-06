@@ -8,7 +8,7 @@
         <script src="../JavaScript/register.js">
             function hidetype(){}
             function showtype(){}
-            function check(){}
+            function retypePass(){}
             function validatePhone(){}
             function validateEmail(){}
             function validatePassword(){}
@@ -55,23 +55,21 @@
                 <div>
                     <label for="email"><b>Email Address: </b></label>
                     <input type="text" name="email" id="email" onkeyup="validateEmail();" required>
-                    <br>
                     <span id=validEmail></span>
                 </div>
                 <div>
                     <label for="phone"><b>Phone number:</b></label>
                     <input type="text" id="phone" class="phone" required onkeyup="validatePhone();">
-                    <br>
                     <span id="validPhone"></span>
                 </div>
                 <div>
                     <label for="password"><b>Password:</b></label>
-                    <input type="password" name="pass" id="pass" onkeyup="check();" minlength="8" maxlength="20" required>
+                    <input type="password" name="pass" id="pass" onkeyup="validatePassword();"  maxlength="20" required>
+                    <span id="pdmsg"></span>
                 </div>
                 <div>
                     <label for="password"><b>Retype Password:</b></label>
-                    <input type="password" name="confirmpass" id="confirmpass" onkeyup="check();">
-                    <br>
+                    <input type="password" name="confirmpass" id="confirmpass" onkeyup="retypePass();">
                     <span id="correctPassword"></span>
                 </div>
                 <div>
