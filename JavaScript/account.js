@@ -7,7 +7,7 @@ var checkLogin = function(event){
     event.preventDefault();
     let uname = document.getElementById("Uname").value;
     let pass = document.getElementById("Pass").value;
-    if(uname == "admin" && pass == "admin123!"){
+    if(uname == "admin" && pass == "Admin123!"){
         myStorage.setItem("user", {username:'admin', pass:'admin123!', email:'admin@gmail.com'});
         alert("Login admin");
         window.location = "../account/myaccount.html";

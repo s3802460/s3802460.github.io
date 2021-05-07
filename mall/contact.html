@@ -11,6 +11,20 @@
         function validateEmail(){}
         function validatePhone(){}
     </script>
+    <script type="text/JavaScript">
+    var couter = function(){
+        let minlength=50;
+        let maxlength = 500;
+        let currentlength = textarea.length;
+        if (currentlength<50) {
+            document.getElementById("countChars").innerHTML = 'Please type ' + (50 - currentlength);
+        } else if (currentlength >= maxlength){
+            document.getElementById("countChars").innerHTML = 'You have reached the maximum amount characters';
+        } else {
+            document.getElementById("countChars").innerHTML = (500 - currentlength) + "characters left";
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -122,7 +136,8 @@
                 <div>
                     <label for="mesage">Message</label>
                     <div class="mes">
-                        <textarea name="message" id="" cols="150" rows="10"></textarea>
+                        <textarea name="message" id="messagebox"  placeholder="Start typing..."  cols="150" rows="10" onkeyup="counter();" required></textarea>
+                        <span id="countChars"></span>
                     </div>
                 </div>
                 <div>
