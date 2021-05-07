@@ -18,7 +18,7 @@ function addToCartClicked() {
     var price = document.getElementsByClassName('product-price')[0].innerText
     var imageSrc = document.getElementsByClassName('image-feature')[0].src
     
-    //save product details temporarily to sessionStorage
+    //check if the cart is empty to consider add new item to the cart or initialise new cart
     if (localStorage.length == 0){
         var newCart= `
         <div class="cart-row">

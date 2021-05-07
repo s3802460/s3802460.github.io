@@ -13,7 +13,7 @@ function ready(){
         button.addEventListener('click', removeCartItem);
     }
 
-    //Input fields
+    //Quantity input fields
     var quantityInputs = document.getElementsByClassName('cart-quantity-input')
     for (var i = 0; i < quantityInputs.length; i++) {
         var input = quantityInputs[i];
@@ -83,7 +83,7 @@ function updateCartTotal() {
         var priceElement = cartRow.getElementsByClassName('cart-price')[0];
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0];
         //Change String type to Float to do calculation
-        var price = parseFloat(priceElement.innerText.replace('$', ''));
+        var price = parseFloat(priceElement.innerText.replace('Price: $', ''));
         var quantity = quantityElement.value;
         total = total + (price * quantity);
     }
