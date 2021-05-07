@@ -6,8 +6,14 @@ if (document.readyState == 'loading') {
 }
 
 function ready(){
+    //Show items to cart section
+
+    addItemToCart();
+
+    document.getElementsByClassName('order-button')[0].addEventListener('click', purchaseClicked)
+    
     //Remove cart item buttons
-    var removeCartItemButtons = document.getElementsByClassName('btn-remove')
+    var removeCartItemButtons = document.getElementsByClassName('btn-remove');
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i];
         button.addEventListener('click', removeCartItem);
@@ -19,22 +25,16 @@ function ready(){
         var input = quantityInputs[i];
         input.addEventListener('change', quantityChanged);
     }
-
-    //Show items to cart section
-
-    addItemToCart();
-
-    document.getElementsByClassName('order-button')[0].addEventListener('click', purchaseClicked)
 }
 
 function purchaseClicked() {
-    alert('Thank you for your purchase')
+    alert('Thank you for your purchase');
     var cartItems = document.getElementsByClassName('cart-items')[0]
     while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
+        cartItems.removeChild(cartItems.firstChild);
     }
-    localStorage.clear()
-    updateCartTotal()
+    localStorage.clear();
+    updateCartTotal();
 }
 
 //Get data from sessionStorage and add it to item rows
@@ -77,6 +77,9 @@ function quantityChanged(event) {
 function updateCartTotal() {
     var itemContainer = document.getElementsByClassName('cart-items')[0];
     var cartRows = itemContainer.getElementsByClassName('cart-row');
+    var coupon = document.getElementById('coupon').value;
+    console.log(coupon);
+    var discount = 0;
     var total = 0;
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i];
@@ -87,7 +90,18 @@ function updateCartTotal() {
         var quantity = quantityElement.value;
         total = total + (price * quantity);
     }
+    //20% sale if entered this coupon
+    if (coupon == "COSC2430-HD"){
+        alert("Applied 20% sale coupon")
+        discount = 0.2;
+    //10% sale for this coupon
+    }else if(coupon == "COSC2430-DI"){ 
+        alert("Applied 10% sale coupon")
+        discount = 0.1;
+    }else{
+        discount = 0;
+    }
     //round float total price number to be integer
-    total = Math.round(total * 100) / 100;
+    total = Math.round(((total*(1-discount)) * 100) / 100);
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
 }

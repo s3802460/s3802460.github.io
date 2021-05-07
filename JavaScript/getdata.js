@@ -19,7 +19,7 @@ function addToCartClicked() {
     var imageSrc = document.getElementsByClassName('image-feature')[0].src
     
     //check if the cart is empty to consider add new item to the cart or initialise new cart
-    if (localStorage.length == 0){
+    if (localStorage.getItem('cart') == null){
         var newCart= `
         <div class="cart-row">
             <div class="cart-item cart-column">
