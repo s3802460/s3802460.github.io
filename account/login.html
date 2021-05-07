@@ -51,36 +51,9 @@
         a:hover{
         color:rgba(34, 109, 37, 0.719) }
 	</style>
-    <script>
-        var myStorage = window.localStorage;
-        let accounts = [{username:'admin', pass:'admin123!', email:'admin@gmail.com'},
-        {username:'admin2', pass:'admin123!', email:'admin2@gmail.com'}];
-
-        myStorage.setItem("account", accounts);
-        let locat = location;
-
-        var redirect = function (){
-            window.location.replace("myaccount.html");
-        };
-        
-        var checkLogin = function(){
-            redirect();
-            let uname = document.getElementById("Uname").value;
-            let pass = document.getElementById("Pass").value;
-            
-            if(true){
-                myStorage.setItem("user", {username:'admin', pass:'admin123!', email:'admin@gmail.com'});
-                //redirect to my accounts;
-                redirect();
-                
-            } else {
-                myStorage.setItem("user", undefined);
-                alert('Username or password is incorrect');
-            }
-
-        };
-
-    </script>
+    <script src="../JavaScript/account.js">
+        function checkLogin(){}
+        </script>
 </head>    
 <body>    
     <h2>Login Page</h2><br>
@@ -99,7 +72,7 @@
                 <input type="Password" name="Pass" id="Pass" placeholder="admin123!"><br><br>
                 </div>
                 <div>   
-                <a href="../account/myaccount.html"><input type="submit" name="log" id="log" value="Log In"></a><br><br>
+                <input type="submit" name="log" id="log" value="Log In"></a><br><br>
                 </div>
                 <div>         
                 <input type="checkbox" id="check">    

@@ -27,13 +27,12 @@
 	</style>
 
 	<script>
-		alert('my account');
-		var myStorage = window.localStorage;
-		let user = myStorage.getItem("user");
-		if (!user) {
-			//redirect to login page
-			location.replace("../account/login.html");
-		}
+		    var myStorage = window.sessionStorage;
+			let user = myStorage.getItem("user");
+			if (!user) {
+				//redirect to login page
+				location.replace("../account/login.html");
+			}
 	</script>
   </head>
   <body>
@@ -74,13 +73,13 @@
   	<div>
 		 <img src="https://i.pinimg.com/564x/7c/46/6e/7c466e6bb4f23e00ffbf17d5feae4fef.jpg" alt="Avatar" class="avatar"><br>
 		<label for="Name">Full Name:</label>
-			Kiyohime
+			admin
 			<br>
 		<label for="Phone">Phone Number:</label>
-			xxx-xxx-123
+			12312312
 			<br>
 		<label for="Email">Email Address:</label>
-			abc@hotmail.com
+			admin@gmail.com
 			<br>
 	</div>
 	</main>
