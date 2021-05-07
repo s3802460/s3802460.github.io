@@ -2,23 +2,19 @@ var myStorage = window.localStorage;
 let accounts = [{username:'admin', pass:'admin123!', email:'admin@gmail.com'}];
 myStorage.setItem("account", accounts);
 
-//redirect to myaccount
-var redirect = function(){
-    window.location.href = "../account/login.html";
-};
 //check login account
-var checkLogin = function(){
+var checkLogin = function(event){
+    event.preventDefault();
     let uname = document.getElementById("Uname").value;
     let pass = document.getElementById("Pass").value;
+    document.querySelector('form').addEventListener('submit', checkLogin);
     if(uname == "admin" && pass == "admin123!"){
         myStorage.setItem("user", {username:'admin', pass:'admin123!', email:'admin@gmail.com'});
         alert("Login admin");
-        redirect();
-        // alert("redirect");
+        window.location = "../account/myaccount.html";
     } else {
         myStorage.setItem("user", undefined);
-        alert('Username or password is incorrect');
+        document.getElementById("incorrectAccount").style.color = "red";
+        document.getElementById("incorrectAccount").innerHTML = "Incorrect Username or Password";
     }
 };
-
-//did not login

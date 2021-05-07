@@ -53,6 +53,7 @@
 	</style>
     <script src="../JavaScript/account.js">
         function checkLogin(){}
+        document.querySelector('form').addEventListener('submit', checkLogin);
         </script>
 </head>    
 <body>    
@@ -72,11 +73,13 @@
                 <input type="Password" name="Pass" id="Pass" placeholder="admin123!"><br><br>
                 </div>
                 <div>   
-                <input type="submit" name="log" id="log" value="Log In"></a><br><br>
+                <input type="submit" name="log" id="log" value="Log In"></a>
+                <span id="incorrectAccount"></span>
+                <br><br>
                 </div>
                 <div>         
                 <input type="checkbox" id="check">    
-                <span>Remember me</span> 
+                <label>Remember me</label>
                 </div>
                 <div>     
                 <a href="../account/recover.html">Forgot Password?</a>
