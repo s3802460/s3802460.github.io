@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mall home</title>
     <link rel="stylesheet" href="../css/mall/style.css">
+    <script src="../JavaScript/register.js">
+        function validateEmail(){}
+        function validatePhone(){}
+    </script>
 </head>
 
 <body>
@@ -60,55 +64,57 @@
                 </div>
                 <div>
                     <label for="name">Name</label>
-                    <input type="text" placeholder="Enter name">
+                    <input type="text" placeholder="Enter name" minlength="3" required>
                 </div>
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" placeholder="Enter email">
+                    <input type="email" id ="email" placeholder="Enter email" onkeyup="validateEmail();" required>
+                    <span id="validEmail"></span>
                 </div>
                 <div>
                     <label for="name">Phone</label>
-                    <input type="text" placeholder="Enter phone">
+                    <input type="text" id="phone" placeholder="Enter phone" onkeyup="validatePhone();" required>
+                    <span id="validPhone"></span>
                 </div>
                 <div>
                     <label for="contact">Preferred contact method</label>
                     <div>
-                        <input type="radio" value="0" name="contact_method">
+                        <input type="radio" value="0" name="contact_method" id="contact_method">
                         <span>Email</span>
                     </div>
                     <div>
-                        <input type="radio" value="1" name="contact_method">
+                        <input type="radio" value="1" name="contact_method" id="contact_method">
                         <span>Phone</span>
                     </div>
                 </div>
                 <div>
                     <label for="Day">Contact days</label>
                     <div>
-                        <input type="checkbox" value="1" name="day">
+                        <input type="checkbox" value="1" id="day">
                         <span>Monday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="2" name="day">
+                        <input type="checkbox" value="2" id="day">
                         <span>Tuesday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="3" name="day">
+                        <input type="checkbox" value="3" id="day">
                         <span>Wednesday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="4" name="day">
+                        <input type="checkbox" value="4" id="day">
                         <span>Thursday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="5" name="day">
+                        <input type="checkbox" value="5" id="day">
                         <span>Friday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="6" name="day">
+                        <input type="checkbox" value="6" id="day">
                         <span>Saturday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="7" name="day">
+                        <input type="checkbox" value="7" id="day">
                         <span>Sunday</span>
                     </div>
                     
