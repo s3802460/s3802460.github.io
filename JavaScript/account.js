@@ -1,7 +1,7 @@
 var myStorage = window.sessionStorage;
-let accounts = [{username:'admin', pass:'Admin123!', phone:'123456789', email:'admin@gmail.com', avatar: "https://s3.zerochan.net/Berserker.%28Kiyohime%29.240.2118242.jpg"},
-                {username:'user2', pass:'user123!', phone:'323425', email:'user2@gmail.com', avatar:"https://s3.zerochan.net/Hoshimachi.Suisei.240.2989574.jpg"},
-                {username:'user3', pass:'user123!', phone:'6345645', email:'user3@gmail.com'}];
+let accounts = [{username:"admin", pass:"Admin123!", phone:"123456789", email: "admin@gmail.com", avatar: "https://s3.zerochan.net/Berserker.%28Kiyohime%29.240.2118242.jpg"},
+                {username:"user2", pass:"user123!", phone:"1231231231", email:"user2@gmail.com", avatar:"https://s3.zerochan.net/Hoshimachi.Suisei.240.2989574.jpg"},
+                {username:"user3", pass:"user123!", phone:"111.222.3333", email:"user3@gmail.com", avatar:"https://i1.sndcdn.com/artworks-TpF0mKmERh5H3mpF-mMCEbg-t500x500.jpg"}];
 myStorage.setItem("account", accounts);
 
 function redirect(url) {
