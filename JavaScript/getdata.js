@@ -9,7 +9,10 @@ if (document.readyState == 'loading') {
 function ready(){
     var addToCartButton = document.getElementsByClassName('add-button');
     if (sessionStorage.getItem('account')==null){
-        alert('Need to login to use add to cart function!');
+        thisButton= addToCartButton[0];
+        thisButton.addEventListener('click', noAccount=>{
+            alert('Need to login to use add to cart function!');
+        });
     }else{
         thisButton= addToCartButton[0];
         thisButton.addEventListener('click', addToCartClicked);
