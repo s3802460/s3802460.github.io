@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mall home</title>
     <link rel="stylesheet" href="../css/mall/style.css">
+    <script src="../JavaScript/mall/counter.js">
+        function counter(){}
+    </script>
     <script src="../JavaScript/security/validation.js">
         function validateEmail(){}
         function validatePhone(){}
-    </script>
-    <script src="../JavaScript/mall/counter.js">
-        function counter(){}
     </script>
 </head>
 
@@ -67,59 +67,59 @@
                 </div>
                 <div>
                     <label for="name">Name</label>
-                    <input type="text" placeholder="Enter name" minlength="3" required>
+                    <input type="text" placeholder="Enter name" id="name" required minlength="3">
                 </div>
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" id ="email" placeholder="Enter email" onkeyup="validateEmail();" required>
+                    <input type="email" placeholder="Enter email" required id="email" onkeyup="validateEmail();">
                     <br>
                     <span id="validEmail"></span>
                 </div>
                 <div>
                     <label for="name">Phone</label>
-                    <input type="text" id="phone" placeholder="Enter phone" onkeyup="validatePhone();" required>
+                    <input type="text" placeholder="Enter phone" required id="phone" onkeyup="validatePhone();">
                     <br>
                     <span id="validPhone"></span>
                 </div>
                 <div>
                     <label for="contact">Preferred contact method</label>
                     <div>
-                        <input type="radio" value="0" name="contact_method" id="contact_method">
+                        <input type="radio" value="0" name="contact_method">
                         <span>Email</span>
                     </div>
                     <div>
-                        <input type="radio" value="1" name="contact_method" id="contact_method">
+                        <input type="radio" value="1" name="contact_method">
                         <span>Phone</span>
                     </div>
                 </div>
                 <div>
                     <label for="Day">Contact days</label>
                     <div>
-                        <input type="checkbox" value="1" id="day">
+                        <input type="checkbox" value="1" name="day">
                         <span>Monday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="2" id="day">
+                        <input type="checkbox" value="2" name="day">
                         <span>Tuesday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="3" id="day">
+                        <input type="checkbox" value="3" name="day">
                         <span>Wednesday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="4" id="day">
+                        <input type="checkbox" value="4" name="day">
                         <span>Thursday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="5" id="day">
+                        <input type="checkbox" value="5" name="day">
                         <span>Friday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="6" id="day">
+                        <input type="checkbox" value="6" name="day">
                         <span>Saturday</span>
                     </div>
                     <div>
-                        <input type="checkbox" value="7" id="day">
+                        <input type="checkbox" value="7" name="day">
                         <span>Sunday</span>
                     </div>
                     
@@ -127,8 +127,8 @@
                 <div>
                     <label for="mesage">Message</label>
                     <div class="mes">
-                        <textarea name="message" id="messagebox"  placeholder="Start typing..."  
-                        cols="150" rows="10" onkeyup="counter();" maxlength="500" required></textarea>
+                        <textarea name="message" id="messagebox" placeholder="Your message..." cols="150" rows="10" 
+                        maxlength="500" onkeyup="counter();"></textarea>
                         <br>
                     </div>
                     <span id="countChars"></span>
@@ -152,6 +152,7 @@
             </ul>
         </nav>
     </footer>
-    <!-- End of footer
+    <!-- <!-- End of footer -->
+    <script src="../JavaScript/mall/main.js"></script>
 </body>
 </html>
