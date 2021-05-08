@@ -1,4 +1,5 @@
 
+
 // New 2
 
 // Loop
@@ -28,7 +29,7 @@ const loop = (target) => {
         first_child.id = 'first_child.' + target + '';
         last_child.id = 'last-child.' + target + '';
 
-        // Them dau them dit
+        
         slide.prepend(last_child);
         slide.append(first_child);
         slide.append(second_child);
@@ -36,7 +37,6 @@ const loop = (target) => {
         slides = document.querySelectorAll('.' + target + ' .row .item');
 
 
-        // dich ve dau
         slide.style.transform = 'translateX(' + (-slideWidth * index - margin) + 'px)';
 
         // Start slide
