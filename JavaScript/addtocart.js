@@ -33,7 +33,7 @@ function purchaseClicked() {
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild);
     }
-    localStorage.clear();
+    sessionStorage.clear();
     updateCartTotal();
 }
 
@@ -50,7 +50,7 @@ function addItemToCart(){
     }
 
     //Add new item row by html
-    var cartRowContents = localStorage.getItem('cart')
+    var cartRowContents = sessionStorage.getItem('cart')
     cartRow.innerHTML = cartRowContents;
     cartItems.append(cartRow);
     cartRow.getElementsByClassName('btn-remove')[0].addEventListener('click', removeCartItem);

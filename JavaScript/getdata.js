@@ -28,7 +28,7 @@ function addToCartClicked() {
     
     
     //check if the cart is empty to consider add new item to the cart or initialise new cart
-    if (localStorage.getItem('cart') == null){
+    if (sessionStorage.getItem('cart') == null){
         var newCart= `
         <div class="cart-row">
             <div class="cart-item cart-column">
@@ -41,7 +41,7 @@ function addToCartClicked() {
                 <button class="btn btn-remove" type="button">REMOVE</button>
             </div>
         </div>`;
-        localStorage.setItem('cart',newCart);
+        sessionStorage.setItem('cart',newCart);
     }else{
         addedToCartCheck(title,price,imageSrc);
     }
@@ -49,7 +49,7 @@ function addToCartClicked() {
 
 //Check if the product already existed in the cart
 function addedToCartCheck(title,price,imageSrc){
-    currentCart = localStorage.getItem('cart');
+    currentCart = sessionStorage.getItem('cart');
     if (currentCart.search(title) == -1){
         alert("Item added to the cart");
         currentCart += `
@@ -64,7 +64,7 @@ function addedToCartCheck(title,price,imageSrc){
                 <button class="btn btn-remove" type="button">REMOVE</button>
             </div>
         </div>`;
-        localStorage.setItem('cart',currentCart);
+        sessionStorage.setItem('cart',currentCart);
     }else{
         alert("Item is already added to the cart")
     }
