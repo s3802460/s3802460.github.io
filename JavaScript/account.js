@@ -1,16 +1,19 @@
-var myStorage = window.localStorage;
+var myStorage = window.sessionStorage;
 let accounts = [{username:'admin', pass:'admin123!', email:'admin@gmail.com'}];
 myStorage.setItem("account", accounts);
 
 //check login account
 var checkLogin = function(event){
-    event.preventDefault();
+    //event.preventDefault();
     let uname = document.getElementById("Uname").value;
     let pass = document.getElementById("Pass").value;
     if(uname == "admin" && pass == "Admin123!"){
         myStorage.setItem("user", {username:'admin', pass:'admin123!', email:'admin@gmail.com'});
         alert("Login admin");
-        window.location = "../account/myaccount.html";
+        //window.location = "../account/myaccount.html";
+       // location.replace("https://vnexpress.net");
+        window.location.replace("https://vnexpress.net");
+        
     } else {
         myStorage.setItem("user", undefined);
         document.getElementById("incorrectAccount").style.color = "red";
