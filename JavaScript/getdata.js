@@ -8,8 +8,13 @@ if (document.readyState == 'loading') {
 //main function
 function ready(){
     var addToCartButton = document.getElementsByClassName('add-button');
-    thisButton= addToCartButton[0];
-    thisButton.addEventListener('click', addToCartClicked);
+    if (sessionStorage.getItem('account')==null){
+        alert('Need to login to use add to cart function!');
+    }else{
+        thisButton= addToCartButton[0];
+        thisButton.addEventListener('click', addToCartClicked);
+    }
+
 }
 
 //event triggers whenever the buy button is clicked
@@ -17,6 +22,7 @@ function addToCartClicked() {
     var title = document.getElementsByClassName('product-title')[0].innerText
     var price = document.getElementsByClassName('product-price')[0].innerText
     var imageSrc = document.getElementsByClassName('image-feature')[0].src
+    
     
     //check if the cart is empty to consider add new item to the cart or initialise new cart
     if (localStorage.getItem('cart') == null){
