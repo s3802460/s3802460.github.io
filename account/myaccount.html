@@ -27,12 +27,25 @@
 	</style>
 
 	<script>
-		    var myStorage = window.sessionStorage;
+		var checkLogin = function(){
+			var myStorage = window.sessionStorage;
 			let user = myStorage.getItem("user");
 			if (!user) {
 				//redirect to login page
 				location.replace("../account/login.html");
+			}else{
+				let parseUser = JSON.parse(user);
+				document.getElementById("Name").innerHTML = parseUser.username;
+				document.getElementById("Phone").innerHTML = parseUser.phone;
+				document.getElementById("Email").innerHTML = parseUser.email;
+				document.getElementById("avatar").src = parseUser.avatar;
 			}
+		};
+
+		window.onload = function() {
+			checkLogin();
+		}
+		    
 	</script>
   </head>
   <body>
@@ -61,7 +74,7 @@
                 </li>
                 <li><a href="../mall/faq.html">FAQs</a></li>
                 <li><a href="../mall/contact.html">Contact</a></li>
-                 <li><a href="../account/login.html">Login</a></li>
+                 <!-- <li><a href="../account/login.html">Login</a></li> -->
                 <li><a href="../account/register.html">Register</a></li>
             </ul>
         </nav>
@@ -71,15 +84,15 @@
 	<!-- Body -->
 	<main>
   	<div>
-		 <img src="https://i.pinimg.com/564x/7c/46/6e/7c466e6bb4f23e00ffbf17d5feae4fef.jpg" alt="Avatar" class="avatar"><br>
+		 <img src=" " id="avatar" alt="Avatar" class="avatar"><br>
 		<label for="Name">Full Name:</label>
-			admin
+			<span id="Name"></span>
 			<br>
 		<label for="Phone">Phone Number:</label>
-			12312312
+			<span id="Phone"></span>
 			<br>
 		<label for="Email">Email Address:</label>
-			admin@gmail.com
+		<span id="Email"></span>
 			<br>
 	</div>
 	</main>
