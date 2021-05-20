@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/loginPage/login.css">
     <script src="../JavaScript/security/login.js">
     </script>
+    <?php 
+    ?>
 </head>    
 <body>    
     <h2>Login Page</h2><br>+
