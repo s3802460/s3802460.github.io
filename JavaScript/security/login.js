@@ -31,7 +31,7 @@ var checkLogin = function(event){
 
     if(loginUser && loginUser.pass === pass) {
         myStorage.setItem("user", JSON.stringify(loginUser));
-        redirect("../account/myaccount.html");
+        redirect("../account/myaccount.php");
         return false;        
     }else{
         loginFail();

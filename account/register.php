@@ -50,7 +50,7 @@
                 $city = clean_text($_POST["city"]);
                 $zip = clean_text($_POST["zip"]);
                 $country = clean_text($_POST["country"]);
-                $account_type = clean_text($_POST["acctype"]);SS
+                $account_type = clean_text($_POST["acctype"]);
                 $file_open = fopen("../csv/account/userdata.csv", "a");
                 $form_data = array(
                     "email" => $email,
@@ -100,7 +100,7 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../mall/about.html">About us</a></li>
                     <li><a href="../mall/fees.html">Fees</a></li>
-                    <li><a href="../account/myaccount.html">My Account</a></li>
+                    <li><a href="../account/myaccount.php">My Account</a></li>
                     <li>
                         <a href="#">Browse</a>
                         <ul>
