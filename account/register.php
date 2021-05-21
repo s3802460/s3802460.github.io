@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title>Register</title>
         <link rel="stylesheet" href="../css/mall/style.css">
+        <link rel="shortcut icon" href="#" />
         <script src="../JavaScript/security/validation.js">
             function hidetype(){}
             function showtype(){}
@@ -13,6 +14,81 @@
             function validateEmail(){}
             function validatePassword(){}
         </script>
+        <?php
+
+            $message = "1";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+
+            $email = "";
+            $phone = "";
+            $username = "";
+            $password = "";
+            $avatar = "";
+            $first_name = "";
+            $last_name = "";
+            $address = "";
+            $city = "";
+            $zip = "";
+            $country = "";
+            $account_type = "";
+            
+            function clean_text($string)
+            {
+            $string = trim($string);
+            $string = stripslashes($string);
+            $string = htmlspecialchars($string);
+            return $string;
+            }
+            
+            
+            if ($_SERVER['REQUEST_METHOD'] === 'POST')
+            {
+                $message = "2";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+                $email = clean_text($_POST["email"]);
+                $phone = clean_text($_POST["phone"]);
+                $username = clean_text($_POST["username"]);
+                $password = clean_text($_POST["pass"]);
+                $avatar = clean_text($_POST["img"]);
+                $first_name = clean_text($_POST["fname"]);
+                $last_name = clean_text($_POST["lname"]);
+                $address = clean_text($_POST["address"]);
+                $city = clean_text($_POST["city"]);
+                $zip = clean_text($_POST["zip"]);
+                $country = clean_text($_POST["country"]);
+                $account_type = clean_text($_POST["acctype"]);SS
+                $file_open = fopen("../csv/account/userdata.csv", "a");
+                $form_data = array(
+                    "email" => $email,
+                    "phone" => $phone,
+                    "username" => $username,
+                    "pass" => $password,
+                    "img" => $avatar,
+                    "fname" => $first_name,
+                    "lname" => $last_name,
+                    "address" => $address,
+                    "city" => $city,
+                    "zip" => $zip,
+                    "country" => $country,
+                    "acctype" => $account_type
+                );
+                fputcsv($file_open, $form_data);
+                $email = "";
+                $phone = "";
+                $username = "";
+                $password = "";
+                $avatar = "";
+                $first_name = "";
+                $last_name = "";
+                $address = "";
+                $city = "";
+                $zip = "";
+                $country = "";
+                $account_type = "";
+                fclose($file_open);
+            }
+           
+        ?>
     </head>
     <body>
         <!-- Footer -->       
@@ -41,7 +117,7 @@
                     <li><a href="../mall/faq.html">FAQs</a></li>
                     <li><a href="../mall/contact.html">Contact</a></li>
                      <li><a href="../account/login.php">Login</a></li>
-                    <li><a href="../account/register.html">Register</a></li>
+                    <li><a href="../account/register.php">Register</a></li>
                 </ul>
             </nav>
         </header>
@@ -51,7 +127,7 @@
         <main>
         <div class="register">
             <h3>Register Account</h3>
-            <form method="POST" action="#">
+            <form method="POST">
                 <div>
                     <label for="email"><b>Email Address: </b></label>
                     <input type="text" name="email" id="email" onkeyup="validateEmail();" required>
@@ -59,8 +135,12 @@
                 </div>
                 <div>
                     <label for="phone"><b>Phone number:</b></label>
-                    <input type="text" id="phone" class="phone" required onkeyup="validatePhone();">
+                    <input type="text" name="phone" id="phone" class="phone" required onkeyup="validatePhone();">
                     <span id="validPhone"></span>
+                </div>
+                <div>
+                    <label for="username"><b>Username:</b></label>
+                    <input type="text" name="username" id="username" required>
                 </div>
                 <div>
                     <label for="password"><b>Password:</b></label>
@@ -317,38 +397,38 @@
                     </select>
                 </div>
                 <div>
-                    <label for="acctype"><b>Account Type:</b></label>
+                    <label for="account_type"><b>Account Type:</b></label>
                     <input type="radio" name="acctype" value="stowner" onclick="showtype();">
                     <span>Store Owner</span>
                     <input type="radio" name="acctype" value="shopper" onclick="hidetype();">
                     Shopper <br><br>
-                        <div id="Bussinesstype" class="hide">
-                            <label for="bussname"><b>Bussiness name: </b></label>
-                            <input type="text" name="bussname" id="bussname" required>
-                            <label for="stname"><b>Store name:</b></label>
-                            <input type="text" name="stname" id="stname" required>
-                            <label for="category"><b>Store Catetory:</b></label>
-                            <select id="category" name="category" >
-                                <option value="select">---Select a Category---</option>
-                                <option value="Department">Department Store</option>
-                                <option value="Grocery">Grocery Store</option>
-                                <option value="restaurant">Restaurant</option>
-                                <option value="cloth">Clothing Store</option>
-                                <option value="accessory">Accessory Store</option>
-                                <option value="pharmacies">Pharmacies Store</option>
-                                <option value="tech">Technology Store</option>
-                                <option value="pet">Pet Store</option>
-                                <option value="toy">Toy Store</option>
-                                <option value="specialty">Specialty Store</option>
-                                <option value="Thrift">Thrift Store</option>
-                                <option value="service">Services</option>
-                                <option value="kiosks">Kiosks Store</option>
-                            </select>
-                        </div>
+                    <div id="Bussinesstype" class="hide">
+                        <label for="bussname"><b>Bussiness name: </b></label>
+                        <input type="text" name="bussname" id="bussname">
+                        <label for="stname"><b>Store name:</b></label>
+                        <input type="text" name="stname" id="stname" >
+                        <label for="category"><b>Store Catetory:</b></label>
+                        <select id="category" name="category" >
+                            <option value="select">---Select a Category---</option>
+                            <option value="Department">Department Store</option>
+                            <option value="Grocery">Grocery Store</option>
+                            <option value="restaurant">Restaurant</option>
+                            <option value="cloth">Clothing Store</option>
+                            <option value="accessory">Accessory Store</option>
+                            <option value="pharmacies">Pharmacies Store</option>
+                            <option value="tech">Technology Store</option>
+                            <option value="pet">Pet Store</option>
+                            <option value="toy">Toy Store</option>
+                            <option value="specialty">Specialty Store</option>
+                            <option value="Thrift">Thrift Store</option>
+                            <option value="service">Services</option>
+                            <option value="kiosks">Kiosks Store</option>
+                        </select>
+                    </div>
                 </div>
                 <div>
                     <button type="reset">Clear</button>
-                    <button type="submit" id="submit">Submit</button>    
+                    <input type="submit" id="submit" value="Submit">Submit</input>    
                 </div>
             </form>
         </div>
