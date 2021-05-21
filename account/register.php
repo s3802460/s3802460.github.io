@@ -15,10 +15,6 @@
             function validatePassword(){}
         </script>
         <?php
-
-            $message = "1";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-
             $email = "";
             $phone = "";
             $username = "";
@@ -43,8 +39,6 @@
             
             if ($_SERVER['REQUEST_METHOD'] === 'POST')
             {
-                $message = "2";
-                echo "<script type='text/javascript'>alert('$message');</script>";
                 $email = clean_text($_POST["email"]);
                 $phone = clean_text($_POST["phone"]);
                 $username = clean_text($_POST["username"]);
