@@ -4,25 +4,27 @@
     <title>Login Form</title>
     <title>Login</title>    
     <link rel="stylesheet" href="../css/loginPage/login.css">
-    <script src="../JavaScript/security/login.js">
-    </script>
     <?php
-        $msg = '';
-
-        if (isset($_POST['login']) && !empty($_POST['username']) 
-            && !empty($_POST['password'])) {
-            
-            if ($_POST['username'] == 'tutorialspoint' && 
-                $_POST['password'] == '1234') {
-                $_SESSION['valid'] = true;
-                $_SESSION['timeout'] = time();
-                $_SESSION['username'] = 'tutorialspoint';
-                
-                echo 'You have entered valid use name and password';
-            }else {
-                $msg = 'Wrong username or password';
+       session_start();
+       $loggedIn = false;
+       $username = trim($_POST['Uname']);
+       $password = trim($_POST['Pass']);
+       if (!strlen($username) || !strlen($password)) {
+            die('Please enter a username and password');
+       }
+        $userdata =  fopen("../csv/account/userdata.csv","r");
+        while(($data = fgetcsv($userdata)) !== FALSE){
+            if($data[2] == $username && $data [3] == $password){
+                $loggedIn = true;
+                break;
             }
         }
+       fclose($userdata);
+       if($loggedIn){
+           header("Location: ../account/myaccount.ptml");
+       }else{
+           echo "Wrong username or Wrong password";
+       }
     ?>
 </head>    
 <body>    
@@ -30,7 +32,7 @@
     <!--Body-->
     <main>  
         <div class="login">    
-            <form id="login" method="post" onsubmit="return checkLogin();">
+            <form id="login" method="post">
                 <div>   
                 <label><b>Username:     
                 </b>    
