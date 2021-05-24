@@ -34,16 +34,13 @@
 		}else{
 			$email = $user[0];
 			$phone = $user[1];
-			// $avatar = header("content-type: image/$user[5]");
+			// $avatar = $user[4];
 			$first_name = $user[5];
 			$last_name = $user[6];
 			$address = $user[7];
 			$city = $user[8];
 			$country = $user[10];
 			$account_type = $user[11];
-			// $bussiness_name = $user[12];
-			// $store_name = $user[13];
-			// $store_cat = $user[14];
 		}
 	?>
 	<!-- <script>
@@ -82,7 +79,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../mall/about.html">About us</a></li>
                 <li><a href="../mall/fees.html">Fees</a></li>
-                <li><a href="../account/myaccount.html">My Account</a></li>
+                <li><a href="../account/myaccount.php">My Account</a></li>
                 <li>
                     <a href="#">Browse</a>
                     <ul>
@@ -102,7 +99,7 @@
 	<!-- Body -->
 	<main>
   	<div>
-		<!-- <img src="<?php echo $_SESSION['avatar']; ?>" id="avatar" alt="Avatar" class="avatar"><br> -->
+		<!-- <img src="<?php echo $avatar ?>" id="avatar" alt="Avatar" class="avatar"><br> -->
 		<label for="email">First Name:</label>
 		<span id="fname" name="fname"><?php echo $first_name ?></span>
 		<br>
@@ -127,7 +124,6 @@
 		<label for="acctype">Account Type:</label>
 		<span id="acctype" name="acctype"><?php echo $account_type ?></span>
 		<br>
-		
 	</div>
 	</main>
 	<!-- End of Body -->

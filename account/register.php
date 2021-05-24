@@ -19,7 +19,7 @@
             $phone = "";
             $username = "";
             $password = "";
-            $avatar = "";
+            // $avatar = "";
             $first_name = "";
             $last_name = "";
             $address = "";
@@ -35,7 +35,8 @@
             $string = htmlspecialchars($string);
             return $string;
             }
-            
+            $image_location = '../data/avatar';
+            $upload_image = $image_location . basename($_FILES['avatar']['username']);   
             
             if ($_SERVER['REQUEST_METHOD'] === 'POST')
             {
@@ -51,13 +52,13 @@
                 $zip = clean_text($_POST["zip"]);
                 $country = clean_text($_POST["country"]);
                 $account_type = clean_text($_POST["acctype"]);
-                $file_open = fopen("../csv/account/userdata.csv", "a");
+                $file_open = fopen("../data/account/userdata.xls", "a");
                 $form_data = array(
                     "email" => $email,
                     "phone" => $phone,
                     "username" => $username,
                     "pass" => $password,
-                    "img" => $avatar,
+                    // "img" => $avatar,
                     "fname" => $first_name,
                     "lname" => $last_name,
                     "address" => $address,
@@ -71,7 +72,7 @@
                 $phone = "";
                 $username = "";
                 $password = "";
-                $avatar = "";
+                // $avatar = "";
                 $first_name = "";
                 $last_name = "";
                 $address = "";
@@ -147,8 +148,8 @@
                     <span id="correctPassword"></span>
                 </div>
                 <div>
-                    <label for="img"><b>Select image:</b></label>
-                    <input type="file" id="img" name="img" accept="image/*">
+                    <label for="avatar"><b>Select image:</b></label>
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
                 </div>
                 <div>
                     <label for="fname"><b>First Name:</b></label>
@@ -422,7 +423,7 @@
                 </div>
                 <div>
                     <button type="reset">Clear</button>
-                    <input type="submit" id="submit" value="Submit">Submit</input>    
+                    <button type="submit" id="submit" value="Submit">Submit</input>    
                 </div>
             </form>
         </div>

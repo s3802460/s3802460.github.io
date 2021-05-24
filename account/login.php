@@ -7,6 +7,7 @@
     <?php
     $errorMessage = "";
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+        session_set_cookie_params(30);
        session_start();
        $username = "";
        $password = "";
@@ -22,7 +23,7 @@
        if (!strlen($username) || !strlen($password)) {
             $errorMessage = "Please enter a username and password";
        }else{
-            $userdata =  fopen("../csv/account/userdata.csv","r");
+            $userdata =  fopen("../data/account/userdata.xls","r");
             while(($data = fgetcsv($userdata)) !== FALSE){
             
                 if($data[2] == $username && $data [3] == $password){
