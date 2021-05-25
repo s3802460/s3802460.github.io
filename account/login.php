@@ -23,10 +23,10 @@
        if (!strlen($username) || !strlen($password)) {
             $errorMessage = "Please enter a username and password";
        }else{
-            $userdata =  fopen("../data/account/userdata.xls","r");
+            $userdata =  fopen("../data/account/userdata.csv","r");
             while(($data = fgetcsv($userdata)) !== FALSE){
-            
-                if($data[2] == $username && $data [3] == $password){
+                echo "pass ". password_hash($password, PASSWORD_DEFAULT);
+                if($data[2] == $username && password_verify($password, $data[3]) ){
                 $_SESSION["user"] = $data;
                     $loggedIn = true;
                     break;
@@ -54,11 +54,11 @@
                 <label><b>Username:     
                 </b>    
                 </label>    
-                <input type="text" name="Uname" id="Uname" placeholder="admin || user2 || user3" value="admin"><br><br>
+                <input type="text" name="Uname" id="Uname"><br><br>
                 </div>
                 <div>      
                 <label><b>Password: </b></label>    
-                <input type="Password" name="Pass" id="Pass" placeholder="Admin123! || User123!" value="Admin123!"><br><br>
+                <input type="Password" name="Pass" id="Pass"><br><br>
                 </div>
                 <div>   
                 <input type="submit" name="log" id="log" value="Log In"></a>

@@ -15,11 +15,27 @@
             function validatePassword(){}
         </script>
         <?php
+
+            $readed = false;
+            $dup_mail = "";
+            $dup_phone ="";
+            if(!$readed){
+                $userdataFile =  fopen("../data/account/userdata.csv","r");
+                $emailuserdata = array();
+                $phoneuserdata = array();
+                while(($data = fgetcsv($userdataFile)) !== FALSE){
+                    array_push($emailuserdata, $data[0]);
+                    array_push($phoneuserdata, $data[1]);
+
+                }
+                fclose($userdataFile);
+            }
+
             $email = "";
             $phone = "";
             $username = "";
             $password = "";
-            // $avatar = "";
+            $avatar = "";
             $first_name = "";
             $last_name = "";
             $address = "";
@@ -34,53 +50,67 @@
             $string = stripslashes($string);
             $string = htmlspecialchars($string);
             return $string;
-            }
-            $image_location = '../data/avatar';
-            $upload_image = $image_location . basename($_FILES['avatar']['username']);   
-            
-            if ($_SERVER['REQUEST_METHOD'] === 'POST')
-            {
+            }                            
+            if ($_SERVER["REQUEST_METHOD"] === "POST")
+            {              
                 $email = clean_text($_POST["email"]);
                 $phone = clean_text($_POST["phone"]);
-                $username = clean_text($_POST["username"]);
-                $password = clean_text($_POST["pass"]);
-                $avatar = clean_text($_POST["img"]);
-                $first_name = clean_text($_POST["fname"]);
-                $last_name = clean_text($_POST["lname"]);
-                $address = clean_text($_POST["address"]);
-                $city = clean_text($_POST["city"]);
-                $zip = clean_text($_POST["zip"]);
-                $country = clean_text($_POST["country"]);
-                $account_type = clean_text($_POST["acctype"]);
-                $file_open = fopen("../data/account/userdata.xls", "a");
-                $form_data = array(
-                    "email" => $email,
-                    "phone" => $phone,
-                    "username" => $username,
-                    "pass" => $password,
-                    // "img" => $avatar,
-                    "fname" => $first_name,
-                    "lname" => $last_name,
-                    "address" => $address,
-                    "city" => $city,
-                    "zip" => $zip,
-                    "country" => $country,
-                    "acctype" => $account_type
-                );
-                fputcsv($file_open, $form_data);
-                $email = "";
-                $phone = "";
-                $username = "";
-                $password = "";
-                // $avatar = "";
-                $first_name = "";
-                $last_name = "";
-                $address = "";
-                $city = "";
-                $zip = "";
-                $country = "";
-                $account_type = "";
-                fclose($file_open);
+
+                $error = false;
+                if(in_array($email, $emailuserdata)){
+                    $dup_mail = "Email Existed";
+                    $error = true;
+                }
+                
+                if(in_array($phone, $phoneuserdata)){
+                    $dup_phone = "Phone Existed";
+                    $error = true;
+                }
+
+                if(!$error) {                    
+                    $username = clean_text($_POST["username"]);
+                    $password = password_hash(clean_text($_POST["pass"]), PASSWORD_DEFAULT);
+                    $image_location = "../data/avatar/";                
+                    $upload_image = $image_location . basename($_FILES["avatar"]["name"]); 
+                    move_uploaded_file($_FILES["avatar"]["tmp_name"], $upload_image);    
+                    $avatar = clean_text($upload_image);
+                    $first_name = clean_text($_POST["fname"]);
+                    $last_name = clean_text($_POST["lname"]);
+                    $address = clean_text($_POST["address"]);
+                    $city = clean_text($_POST["city"]);
+                    $zip = clean_text($_POST["zip"]);
+                    $country = clean_text($_POST["country"]);
+                    $account_type = clean_text($_POST["acctype"]);
+                    $file_open = fopen("../data/account/userdata.csv", "a");
+                    $form_data = array(
+                        "email" => $email,
+                        "phone" => $phone,
+                        "username" => $username,
+                        "pass" => $password,
+                        "avatar" => $avatar,
+                        "fname" => $first_name,
+                        "lname" => $last_name,
+                        "address" => $address,
+                        "city" => $city,
+                        "zip" => $zip,
+                        "country" => $country,
+                        "acctype" => $account_type
+                    );
+                    fputcsv($file_open, $form_data);
+                    $email = "";
+                    $phone = "";
+                    $username = "";
+                    $password = "";
+                    $avatar = "";
+                    $first_name = "";
+                    $last_name = "";
+                    $address = "";
+                    $city = "";
+                    $zip = "";
+                    $country = "";
+                    $account_type = "";
+                    fclose($file_open);
+                }
             }
            
         ?>
@@ -122,16 +152,18 @@
         <main>
         <div class="register">
             <h3>Register Account</h3>
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 <div>
                     <label for="email"><b>Email Address: </b></label>
                     <input type="text" name="email" id="email" onkeyup="validateEmail();" required>
                     <span id=validEmail></span>
+                    <span id="error" name="errormsg"><?php echo $dup_mail ?></span>
                 </div>
                 <div>
                     <label for="phone"><b>Phone number:</b></label>
                     <input type="text" name="phone" id="phone" class="phone" required onkeyup="validatePhone();">
                     <span id="validPhone"></span>
+                    <span id="error" name="errormsg"><?php echo $dup_phone ?></span>
                 </div>
                 <div>
                     <label for="username"><b>Username:</b></label>

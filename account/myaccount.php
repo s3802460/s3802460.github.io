@@ -34,7 +34,7 @@
 		}else{
 			$email = $user[0];
 			$phone = $user[1];
-			// $avatar = $user[4];
+			$avatar = $user[4];
 			$first_name = $user[5];
 			$last_name = $user[6];
 			$address = $user[7];
@@ -99,7 +99,7 @@
 	<!-- Body -->
 	<main>
   	<div>
-		<!-- <img src="<?php echo $avatar ?>" id="avatar" alt="Avatar" class="avatar"><br> -->
+		<img src="<?php echo $avatar ?>" id="avatar" alt="Avatar" class="avatar"><br>
 		<label for="email">First Name:</label>
 		<span id="fname" name="fname"><?php echo $first_name ?></span>
 		<br>
