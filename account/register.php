@@ -19,14 +19,16 @@
             $readed = false;
             $dup_mail = "";
             $dup_phone ="";
+            $dup_username ="";
             if(!$readed){
                 $userdataFile =  fopen("../data/account/userdata.csv","r");
-                $emailuserdata = array();
-                $phoneuserdata = array();
+                $email_userdata = array();
+                $phone_userdata = array();
+                $username_userdata = array();
                 while(($data = fgetcsv($userdataFile)) !== FALSE){
-                    array_push($emailuserdata, $data[0]);
-                    array_push($phoneuserdata, $data[1]);
-
+                    array_push($email_userdata, $data[0]);
+                    array_push($phone_userdata, $data[1]);
+                    array_push($username_userdata, $data[2]);
                 }
                 fclose($userdataFile);
             }
@@ -55,20 +57,22 @@
             {              
                 $email = clean_text($_POST["email"]);
                 $phone = clean_text($_POST["phone"]);
-
+                $username = clean_text($_POST["username"]);
                 $error = false;
-                if(in_array($email, $emailuserdata)){
+                if(in_array($email, $email_userdata)){
                     $dup_mail = "Email Existed";
                     $error = true;
                 }
                 
-                if(in_array($phone, $phoneuserdata)){
+                if(in_array($phone, $phone_userdata)){
                     $dup_phone = "Phone Existed";
                     $error = true;
                 }
-
+                if(in_array($username, $username_userdata)){
+                    $dup_username = "Username Existed";
+                    $error = true;
+                }
                 if(!$error) {                    
-                    $username = clean_text($_POST["username"]);
                     $password = password_hash(clean_text($_POST["pass"]), PASSWORD_DEFAULT);
                     $image_location = "../data/avatar/";                
                     $upload_image = $image_location . basename($_FILES["avatar"]["name"]); 
@@ -168,6 +172,7 @@
                 <div>
                     <label for="username"><b>Username:</b></label>
                     <input type="text" name="username" id="username" required>
+                    <span id="error" name="errormsg"><?php echo $dup_username ?></span>
                 </div>
                 <div>
                     <label for="password"><b>Password:</b></label>
