@@ -25,7 +25,6 @@
        }else{
             $userdata =  fopen("../data/account/userdata.csv","r");
             while(($data = fgetcsv($userdata)) !== FALSE){
-                echo "pass ". password_hash($password, PASSWORD_DEFAULT);
                 if($data[2] == $username && password_verify($password, $data[3]) ){
                 $_SESSION["user"] = $data;
                     $loggedIn = true;
@@ -67,7 +66,7 @@
                 <div>         
                 <input type="checkbox" id="check">    
                 <label>Remember me</label><br>
-                <span id="error" name="errormsg"><?php echo $errorMessage ?></span>
+                <span id="error" name="error"><?php echo $errorMessage ?></span>
                 </div>
                 <div>     
                 <a href="../account/recover.html">Forgot Password?</a>

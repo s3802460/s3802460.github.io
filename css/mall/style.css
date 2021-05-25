@@ -682,6 +682,10 @@
 
     /* End of catagory name */
     /* Register */
+    #error {
+        font-size: 15px;
+        color: #f44336;
+    }
     main .register form{
         font-size: 15px;
     }
@@ -730,6 +734,7 @@
         margin: 0 20px;
         border-radius: 40px;
     }
+
 
     /* End of body */
 

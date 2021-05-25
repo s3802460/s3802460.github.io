@@ -43,4 +43,8 @@ a{
     float: right;  
 } 
 a:hover{
-color:rgba(34, 109, 37, 0.719) }
+    color:rgba(34, 109, 37, 0.719) 
+}
+#error {
+    color: rgb(rgb(192, 32, 32));
+}
