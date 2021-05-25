@@ -62,7 +62,6 @@
                 </div>
                 <div>   
                 <input type="submit" name="log" id="log" value="Log In"></a>
-                <span id="incorrectAccount"></span>
                 <br><br>
                 </div>
                 <div>         
