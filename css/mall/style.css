@@ -710,6 +710,14 @@
         display: inline-block;
         width: 110px;
     }
+    main .ProfilePic img{
+        width: 128px;
+        height: 128px;
+    }
+    .UserInfo{
+        position: absolute;
+        left: 300px;
+    }
     main .register form button{
         padding: 10px 30px;
         margin: 0 20px;
@@ -925,4 +933,3 @@
         display: none;
     }
     /* End of Notification */
- 

@@ -13,6 +13,12 @@
             function validatePhone(){}
             function validateEmail(){}
             function validatePassword(){}
+
+            // var validateForm = function(){
+            //     alert('go here');
+            //     return false;
+                // return validateEmail && validatePassword && validatePhone;
+            }
         </script>
         <?php
 
@@ -20,6 +26,7 @@
             $dup_mail = "";
             $dup_phone ="";
             $dup_username ="";
+            // $validation = "";
             if(!$readed){
                 $userdataFile =  fopen("../data/account/userdata.csv","r");
                 $email_userdata = array();
@@ -56,6 +63,7 @@
             if ($_SERVER["REQUEST_METHOD"] === "POST")
             {              
                 $email = clean_text($_POST["email"]);
+                // $email_pattern= "/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{3,})$/";
                 $phone = clean_text($_POST["phone"]);
                 $username = clean_text($_POST["username"]);
                 $error = false;
@@ -63,7 +71,13 @@
                     $dup_mail = "Email Existed";
                     $error = true;
                 }
-                
+                // if(preg_match($email,$email_pattern) !== 0){
+                //     echo 'email: '. $email;
+                //     $validation = "Not a valid email";
+                //     $error =  true;
+                // }else{
+                //     echo "here";
+                // }
                 if(in_array($phone, $phone_userdata)){
                     $dup_phone = "Phone Existed";
                     $error = true;
@@ -156,7 +170,7 @@
         <main>
         <div class="register">
             <h3>Register Account</h3>
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" >
                 <div>
                     <label for="email"><b>Email Address: </b></label>
                     <input type="text" name="email" id="email" onkeyup="validateEmail();" required>

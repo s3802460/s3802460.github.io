@@ -44,21 +44,28 @@ var validateEmail = function() {
     if (document.getElementById("email").value.match(emailPattern)) {
         document.getElementById("validEmail").style.color = 'green';
         document.getElementById("validEmail").innerHTML = 'Valid Email';
+
+        return true;
     } else {
         document.getElementById("validEmail").style.color = 'red';
         document.getElementById("validEmail").innerHTML = 'Not a Valid Email';
+        
+        return false;
     }
 };
 
 //Validate Password
 var validatePassword = function(){
+    retypePass();
     passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,})$/;
     if (document.getElementById("pass").value.match(passwordPattern)) {
         document.getElementById("pdmsg").style.color = 'green';
         document.getElementById("pdmsg").innerHTML = 'Strong Password';
+        return true;
     } else {
         document.getElementById("pdmsg").style.color = 'red';
         document.getElementById("pdmsg").innerHTML = 'Weak Password';
+        return false;
     }
-    retypePass();
+    
 };

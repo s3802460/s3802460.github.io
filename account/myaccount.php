@@ -24,6 +24,18 @@
 			margin-top: 15px;
 			margin-bottom: 15px;
 		}
+		div.ProfilePic{
+			position: absolute;
+			left: 150px;
+		}
+		div.UserInfo{
+			position: relative;
+			left: 150px;
+		}
+		main .ProfilePic img{
+			width: 128px;
+			height: 128px;
+    	}
 	</style>
 	<?php 
 		session_start();
@@ -99,31 +111,51 @@
 	<!-- Body -->
 	<main>
   	<div>
-		<img src="<?php echo $avatar ?>" id="avatar" alt="Avatar" class="avatar"><br>
-		<label for="email">First Name:</label>
-		<span id="fname" name="fname"><?php echo $first_name ?></span>
-		<br>
-		<label for="email">Last Name:</label>
-		<span id="fname" name="fname"><?php echo $last_name ?></span>
-		<br>
-		<label for="Email">Email Address:</label>
-		<span id="Email"><?php echo $email ?></span>
-		<br>
-		<label for="Phone">Phone Number:</label>
-		<span id="Phone" name="phone"><?php echo $phone ?></span>
-		<br>
-		<label for="address">Address:</label>
-		<span id="address" name="address"><?php echo $address ?></span>
-		<br>
-		<label for="city">City:</label>
-		<span id="city" name="city"><?php echo $city ?></span>
-		<br>
-		<label for="country">Country:</label>
-		<span id="country" name="country"><?php echo $country ?></span>
-		<br>
-		<label for="acctype">Account Type:</label>
-		<span id="acctype" name="acctype"><?php echo $account_type ?></span>
-		<br>
+		<div class="ProfilePic">
+			<img src="<?php echo $avatar ?>" id="avatar" alt="Avatar" class="avatar"><br>
+		</div>
+		<div class="UserInfo">
+			<div>
+				<label for="email">First Name:</label>
+				<span id="fname" name="fname"><?php echo $first_name ?></span>
+				<br>
+			</div>
+			<div>
+				<label for="email">Last Name:</label>
+				<span id="fname" name="fname"><?php echo $last_name ?></span>
+				<br>
+			</div>
+			<div>
+				<label for="Email">Email Address:</label>
+				<span id="Email"><?php echo $email ?></span>
+				<br>
+			</div>
+			<div>
+				<label for="Phone">Phone Number:</label>
+				<span id="Phone" name="phone"><?php echo $phone ?></span>
+				<br>
+			</div>
+			<div>
+				<label for="address">Address:</label>
+				<span id="address" name="address"><?php echo $address ?></span>
+				<br>
+			</div>
+			<div>
+				<label for="city">City:</label>
+				<span id="city" name="city"><?php echo $city ?></span>
+				<br>
+			</div>
+			<div>
+				<label for="country">Country:</label>
+				<span id="country" name="country"><?php echo $country ?></span>
+				<br>
+			</div>
+			<div>
+				<label for="acctype">Account Type:</label>
+				<span id="acctype" name="acctype"><?php echo $account_type ?></span>
+				<br>
+			</div>
+		</div>
 	</div>
 	</main>
 	<!-- End of Body -->
