@@ -1,3 +1,6 @@
+<?php
+include('../check_install.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,23 +21,23 @@
                 <div></div>
                 <div></div>
             </div>
-            <a href="../index.html"><img src="../img/logo.png" alt="logo"></a>
+            <a href="../index.php"><img src="../img/logo.png" alt="logo"></a>
         </div>
         <nav class="">
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../mall/about.html">About us</a></li>
-                <li><a href="../mall/fees.html">Fees</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../mall/about.php">About us</a></li>
+                <li><a href="../mall/fees.php">Fees</a></li>
                 <li><a href="../account/myaccount.php">My Account</a></li>
                 <li>
                     <a href="#">Browse</a>
                     <ul>
-                        <li><a href="../mall/browse_name.html">Browse Stores by Name</a></li>
-                        <li><a href="../mall/browse_catagory.html">Browse Stores by Category</a></li>
+                        <li><a href="../mall/browse_name.php">Browse Stores by Name</a></li>
+                        <li><a href="../mall/browse_catagory.php">Browse Stores by Category</a></li>
                     </ul>
                 </li>
-                <li><a href="../mall/faq.html">FAQs</a></li>
-                <li><a href="../mall/contact.html">Contact</a></li>
+                <li><a href="../mall/faq.php">FAQs</a></li>
+                <li><a href="../mall/contact.php">Contact</a></li>
                  <li><a href="../account/login.php">Login</a></li>
                 <li><a href="../account/register.php">Register</a></li>
             </ul>
@@ -81,9 +84,9 @@
     <footer class="clearfix">
         <nav>
             <ul>
-                <li><a href="../mall/copyright.html">Copyright</a> </li>
-                <li><a href="../mall/termofservice.html">Term of service</a> </li>
-                <li><a href="../mall/privatepolicy.html">Private Policy</a> </li>
+                <li><a href="../mall/copyright.php">Copyright</a> </li>
+                <li><a href="../mall/termofservice.php">Term of service</a> </li>
+                <li><a href="../mall/privatepolicy.php">Private Policy</a> </li>
             </ul>
         </nav>
     </footer>
