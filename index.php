@@ -1,9 +1,12 @@
 <?php
+// Start the session
+session_start();
+?>
+<?php
 include('check_install.php');
 include('fetch/fetch_data.php');
 include('fetch/find_item_base_on_id.php')
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,10 +128,11 @@ include('fetch/find_item_base_on_id.php')
                                 </a>
                             </div>
                             <div class="content">
-                                <a href="#store_link">
+                                <a href="store/store_home.php">
                                     <h5>
                                         <?php
                                         print $new_store[1];
+                                        $_SESSION["storeid"] = $new_store[0];
                                         ?>
                                     </h5>
                                 </a>

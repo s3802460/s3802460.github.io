@@ -8,6 +8,7 @@ $stores = array();
 
 $data = fgetcsv($store_file, 0, ',');//Skip the first row
 
+$current_store='store name';
 while ($data = fgetcsv($store_file, 0, ',')) {
     $data[3] = date_create($data[3]);
     $stores[] = $data;
@@ -36,8 +37,6 @@ foreach ($store_sorted as $item) {
         break;
     }
 }
-
-
 
 
 

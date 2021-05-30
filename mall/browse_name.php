@@ -202,7 +202,7 @@ include('../check_install.php');
             </ul>
         </nav>
     </footer>
-    <!-- <!-- End of footer -->
+    <!--  End of footer -->
     <script src="../JavaScript/mall/main.js"></script>
 </body>
 </html>
