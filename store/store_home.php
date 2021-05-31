@@ -27,11 +27,11 @@ include('../fetch/find_item_base_on_id.php');
     <header class="clearfix">
       <div class="logo">
           <div class="hamburger"></div>
-          <a href="../store/store_home.html"><img src="../img/store/store1.jpg" alt="logo-store1">
+          <a href="../store/store_home.php"><img src="../img/store/store1.jpg" alt="logo-store1">
       </div>
       <nav class="">
           <ul>
-              <li><a href="../store/store_home.html">Store Home</a></li>
+              <li><a href="../store/store_home.php">Store Home</a></li>
               <li><a href="../index.html">Home</a></li>
               <li><a href="../mall/about.html">About us</a></li>
               <li>
