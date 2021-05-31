@@ -1,5 +1,6 @@
 <?php
 include('../check_install.php');
+include('../fetch/browse_by_name.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,143 +50,170 @@ include('../check_install.php');
             <label for="list">Letter</label>
             <div>
                 <div>
-                    <a href="#">A</a>
+                    <a href="?key=A">A</a>
                 </div>
                 <div>
-                    <a href="#">B</a>
+                    <a href="?key=B">B</a>
                 </div>
                 <div>
-                    <a href="#">C</a>
+                    <a href="?key=C">C</a>
                 </div>
                 <div>
-                    <a href="#">D</a>
+                    <a href="?key=D">D</a>
                 </div>
                 <div>
-                    <a href="#">F</a>
+                    <a href="?key=E">E</a>
                 </div>
                 <div>
-                    <a href="#">G</a>
+                    <a href="?key=F">F</a>
                 </div>
                 <div>
-                    <a href="#">H</a>
+                    <a href="?key=G">G</a>
                 </div>
                 <div>
-                    <a href="#">I</a>
+                    <a href="?key=H">H</a>
                 </div>
                 <div>
-                    <a href="#">J</a>
+                    <a href="?key=I">I</a>
                 </div>
                 <div>
-                    <a href="#">K</a>
+                    <a href="?key=J">J</a>
                 </div>
                 <div>
-                    <a href="#">L</a>
+                    <a href="?key=K">K</a>
                 </div>
                 <div>
-                    <a href="#">M</a>
+                    <a href="?key=L">L</a>
                 </div>
                 <div>
-                    <a href="#">N</a>
+                    <a href="?key=M">M</a>
                 </div>
                 <div>
-                    <a href="#">O</a>
+                    <a href="?key=N">N</a>
                 </div>
                 <div>
-                    <a href="#">P</a>
+                    <a href="?key=O">O</a>
                 </div>
                 <div>
-                    <a href="#">Q</a>
+                    <a href="?key=P">P</a>
                 </div>
                 <div>
-                    <a href="#">R</a>
+                    <a href="?key=Q">Q</a>
                 </div>
                 <div>
-                    <a href="#">S</a>
+                    <a href="?key=R">R</a>
                 </div>
                 <div>
-                    <a href="#">T</a>
+                    <a href="?key=S">S</a>
                 </div>
                 <div>
-                    <a href="#">U</a>
+                    <a href="?key=T">T</a>
                 </div>
                 <div>
-                    <a href="#">V</a>
+                    <a href="?key=U">U</a>
                 </div>
                 <div>
-                    <a href="#">W</a>
+                    <a href="?key=V">V</a>
                 </div>
                 <div>
-                    <a href="#">X</a>
+                    <a href="?key=W">W</a>
                 </div>
                 <div>
-                    <a href="#">Y</a>
+                    <a href="?key=X">X</a>
                 </div>
                 <div>
-                    <a href="#">Z</a>
+                    <a href="?key=Y">Y</a>
+                </div>
+                <div>
+                    <a href="?key=Z">Z</a>
                 </div>
             </div>
         </div>
         <div class="store">
-            <div class="row">
-                <div class="item">
-                    <div class="logo">
-                        <a href="../store/store_home.php">
-                            <img src="../img/store/store1.jpg" alt="logo">
-                        </a>
+            <div class="container">
+                <div class="row">
+                    <!--<div class="item">
+                        <div class="logo">
+                            <a href="../store/store_home.php">
+                                <img src="../img/store/store1.jpg" alt="logo">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <a href="../store/store_home.php">
+                                <h5>Player1</h5>
+                            </a>
+                        </div>
                     </div>
-                    <div class="content">
-                        <a href="../store/store_home.php">
-                            <h5>Player1</h5>
-                        </a>
+                    <div class="item">
+                        <div class="logo">
+                            <a href="../store2/store_home2.html">
+                                <img src="../img/store/store2.jpg" alt="logo">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <a href="../store2/store_home2.html">
+                                <h5>Tee</h5>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="logo">
-                        <a href="../store2/store_home2.html">
-                            <img src="../img/store/store2.jpg" alt="logo">
-                        </a>
+                    <div class="item">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="../img/store/store3.jpg" alt="logo">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <a href="#">
+                                <h5>Store 3</h5>
+                            </a>
+                        </div>
                     </div>
-                    <div class="content">
-                        <a href="../store2/store_home2.html">
-                            <h5>Tee</h5>
-                        </a>
+                    <div class="item">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="../img/store/store4.jpg" alt="logo">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <a href="#">
+                                <h5>Store 4</h5>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="logo">
-                        <a href="#">
-                            <img src="../img/store/store3.jpg" alt="logo">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <a href="#">
-                            <h5>Store 3</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="logo">
-                        <a href="#">
-                            <img src="../img/store/store4.jpg" alt="logo">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <a href="#">
-                            <h5>Store 4</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="logo">
-                        <a href="#">
-                            <img src="../img/store/store5.jpg" alt="logo">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <a href="#">
-                            <h5>Store 5</h5>
-                        </a>
-                    </div>
+                    <div class="item">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="../img/store/store5.jpg" alt="logo">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <a href="#">
+                                <h5>Store 5</h5>
+                            </a>
+                        </div>
+                    </div>-->
+                    <?php
+                    foreach ($new_stores as $sorted_store) {
+                    ?>
+                        <div class="item">
+                            <div class="logo">
+                                <a href="#store_link">
+                                    <img src="#img_store_link" alt="logo_store">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <a href="store/store_home.php?storeid=<?php echo $sorted_store[0]; ?>">
+                                    <h5>
+                                        <?php
+                                        print $sorted_store[1];
+                                        ?>
+                                    </h5>
+                                </a>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

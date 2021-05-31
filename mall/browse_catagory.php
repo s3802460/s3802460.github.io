@@ -1,5 +1,6 @@
 <?php
 include('../check_install.php');
+include('../fetch/browse_by_category.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,18 +48,28 @@ include('../check_install.php');
     <main>
         <div>
             <label for="list">Category</label>
-            <select name="list" id="">
-                <option value="0">Category 1</option>
-                <option value="1">Category 2</option>
-                <option value="2">Category 3</option>
-                <option value="3">Category 4</option>
-                <option value="4">Category 5</option>
-                <option value="5">Category 6</option>
-            </select>
+            <form method ="GET" action="#">
+                <select name="list" id="list">
+                    <!--<option value="0">Category 1</option>
+                    <option value="1">Category 2</option>
+                    <option value="2">Category 3</option>
+                    <option value="3">Category 4</option>
+                    <option value="4">Category 5</option>
+                    <option value="5">Category 6</option>-->
+                    <?php
+                    foreach ($category as $cate) {
+                    ?>
+                    <option value="<?php echo $cate[0]; ?>"><?php echo $cate[1]; ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <button type="submit">Filter</button>
+            </form>
         </div>
         <div class="store">
             <div class="row">
-                <div class="item">
+                <!--<div class="item">
                     <div class="logo">
                         <a href="../store/store_home.php">
                             <img src="../img/store/store1.jpg" alt="logo">
@@ -117,7 +128,29 @@ include('../check_install.php');
                             <h5>Store 5</h5>
                         </a>
                     </div>
-                </div>
+                </div>-->
+                <?php
+                foreach ($stores_sorted as $sorted_store) {
+                ?>
+                    <div class="item">
+                        <div class="logo">
+                            <a href="#store_link">
+                                <img src="#img_store_link" alt="logo_store">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <a href="store/store_home.php?storeid=<?php echo $sorted_store[0]; ?>">
+                                <h5>
+                                    <?php
+                                    print $sorted_store[1];
+                                    ?>
+                                </h5>
+                            </a>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </main>

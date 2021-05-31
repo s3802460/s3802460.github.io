@@ -132,7 +132,6 @@ include('fetch/find_item_base_on_id.php')
                                     <h5>
                                         <?php
                                         print $new_store[1];
-                                        $_SESSION["storeid"] = $new_store[0];
                                         ?>
                                     </h5>
                                 </a>
@@ -335,7 +334,7 @@ include('fetch/find_item_base_on_id.php')
                                 </a>
                             </div>
                             <div class="content">
-                                <a href="#featured_store_logo">
+                                <a href="store/store_home.php?storeid=<?php echo $new_store[0]; ?>">
                                     <h5>
                                         <?php
                                         print $featured_store[1];
