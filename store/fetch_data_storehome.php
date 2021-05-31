@@ -12,7 +12,7 @@ while ($data = fgetcsv($product_file, 0, ',')) {
 }
 fclose($product_file);
 
-$products = findProductsBaseOnId($products,$_SESSION["storeid"]);
+$products = findProductsBaseOnId($products,$_GET["storeid"]);
 
 $new_products5 = array();
 $featured_products_store=array();

@@ -128,7 +128,7 @@ include('fetch/find_item_base_on_id.php')
                                 </a>
                             </div>
                             <div class="content">
-                                <a href="store/store_home.php">
+                                <a href="store/store_home.php?storeid=<?php echo $new_store[0]; ?>">
                                     <h5>
                                         <?php
                                         print $new_store[1];
