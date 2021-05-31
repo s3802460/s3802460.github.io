@@ -129,12 +129,12 @@ include('../check_install.php');
             <div class="row">
                 <div class="item">
                     <div class="logo">
-                        <a href="../store/store_home.html">
+                        <a href="../store/store_home.php">
                             <img src="../img/store/store1.jpg" alt="logo">
                         </a>
                     </div>
                     <div class="content">
-                        <a href="../store/store_home.html">
+                        <a href="../store/store_home.php">
                             <h5>Player1</h5>
                         </a>
                     </div>
