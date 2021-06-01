@@ -1,3 +1,11 @@
+<?php
+// Start the session
+session_start();
+?>
+<?php
+include('../fetch/find_item_base_on_id.php');
+include('look_up_product_info.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,19 +30,19 @@
         </div>
         <nav class="">
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../mall/about.html">About us</a></li>
-                <li><a href="../mall/fees.html">Fees</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../mall/about.php">About us</a></li>
+                <li><a href="../mall/fees.php">Fees</a></li>
                 <li><a href="../account/myaccount.php">My Account</a></li>
                 <li>
                     <a href="#">Browse</a>
                     <ul>
-                        <li><a href="../mall/browse_name.html">Browse Stores by Name</a></li>
-                        <li><a href="../mall/browse_catagory.html">Browse Stores by Category</a></li>
+                        <li><a href="../mall/browse_name.php">Browse Stores by Name</a></li>
+                        <li><a href="../mall/browse_catagory.php">Browse Stores by Category</a></li>
                     </ul>
                 </li>
-                <li><a href="../mall/faq.html">FAQs</a></li>
-                <li><a href="../mall/contact.html">Contact</a></li>
+                <li><a href="../mall/faq.php">FAQs</a></li>
+                <li><a href="../mall/contact.php">Contact</a></li>
                  <li><a href="../account/login.php">Login</a></li>
                 <li><a href="../account/register.php">Register</a></li>
             </ul>
@@ -49,8 +57,8 @@
             <img class="image-feature" src="../img/products/product1.jpg" alt="Product 1">
           </div>
           <div class ="product-detail">
-            <h1 class='product-title'>PS5-Standard Edition</h1>
-            <h2 class='product-price'>Price: $500</h2>
+            <h1 class='product-title'><?php print $productpage[1];?></h1>
+            <h2 class='product-price'>$<?php print $productpage[2];?></h2>
             <a href="#" class="add-button">Add To Cart</a>
             <a href="../store/mycart.html" class="buy-button">Buy Now</a>
             <div>
@@ -62,7 +70,7 @@
       <div class="featured-product">
             <h3>Recommended Products</h3>
             <div class="row">
-                <div class="item">
+                <!--<div class="item">
                     <h5>PS5-Standard Edition</h5>
                     <div class="img">
                         <a href="../store/store1_p1.html">
@@ -109,7 +117,28 @@
                         <div class="price">$350</div>
                         <div class="store"><a href="#">store 1</a> </div>
                     </div>
-                </div>
+                </div>-->
+                <?php
+                foreach ($new_products5 as $new_product) {
+                ?>
+                    <div class="item">
+                        <a href="store/store_home.php?productid=<?php echo $new_product[0]; ?>">
+                            <h5>
+                                <?php print $new_product[1];
+                                $_SESSION['productid'] = $new_product[0]; 
+                                ?>
+                                </h5>
+                        </a>
+                        <div class="img">
+                            <img src="#featured_product_logo_img" alt="featured_product_logo">
+                        </div>
+                        <div class="content">
+                            <div class="price"><?php print $new_product[2]; ?>$</div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </main>

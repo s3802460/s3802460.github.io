@@ -12,23 +12,8 @@ while ($data = fgetcsv($product_file, 0, ',')) {
 }
 fclose($product_file);
 
-$products = findProductsBaseOnId($products,$_GET["storeid"]);
+$productpage=findItemBaseOnId($products,$_GET['productid']);
 
-$new_products5 = array();
-$featured_products_store=array();
-$_SESSION['storeid']=$_GET['storeid'];
-//Featured products
-$index=0;
-foreach ($products as $item) {
-    if ($item[6]=="TRUE") {
-        $featured_products_store[$index] = $item;
-        $index = $index + 1;
-    }
-    if ($index >= 5) {
-        break;
-    }
-}
-//5 New products showcase
 $str1=0;
 $index=0;
 $count=0;
@@ -47,5 +32,4 @@ while ($index<5){
 	$new_products5[$index]=$str1;
 	$index+=1;
 	$count=0;
-
 }

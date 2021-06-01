@@ -32,12 +32,12 @@ include('../fetch/find_item_base_on_id.php');
       <nav class="">
           <ul>
               <li><a href="#">Store Home</a></li>
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="../mall/about.html">About us</a></li>
+              <li><a href="../index.php">Home</a></li>
+              <li><a href="../mall/about.php">About us</a></li>
               <li>
                     <a href="#">Products</a>
                     <ul>
-                        <li><a href="../store/browse_time.html">Browse Products by Time Created</a></li>
+                        <li><a href="../store/browse_time.php?timelist=0&storeid=<?php echo $_SESSION['storeid']?>">Browse Products by Time Created</a></li>
                         <li><a href="../store/browse_Pcategory.html">Browse Products by Category</a></li>
                     </ul>
                 </li>
@@ -277,7 +277,13 @@ include('../fetch/find_item_base_on_id.php');
                     foreach ($new_products5 as $new_product) {
                     ?>
                     	<div class="item">
-                            <h5><?php print $new_product[1]; ?></h5>
+                            <a href="../store/store1_p1.php?productid=<?php echo $new_product[0]; ?>">
+                            	<h5>
+                            		<?php print $new_product[1];
+                            		$_SESSION['productid'] = $new_product[0]; 
+                            		?>
+                            	</h5>
+                            </a>
                             <div class="img">
                                 <img src="#featured_product_logo_img" alt="featured_product_logo">
                             </div>
@@ -519,7 +525,13 @@ include('../fetch/find_item_base_on_id.php');
                     foreach ($featured_products_store as $featured_product) {
                     ?>
                     	<div class="item">
-                            <h5><?php print $featured_product[1]; ?></h5>
+                            <a href="../store/store1_p1.php?productid=<?php echo $new_product[0]; ?>">
+                            	<h5>
+                            		<?php print $new_product[1];
+                            		$_SESSION['productid'] = $new_product[0]; 
+                            		?>
+                            	</h5>
+                            </a>
                             <div class="img">
                                 <img src="#featured_product_logo_img" alt="featured_product_logo">
                             </div>

@@ -132,6 +132,7 @@ include('fetch/find_item_base_on_id.php')
                                     <h5>
                                         <?php
                                         print $new_store[1];
+                                        $_SESSION['storeid'] = $new_store[0];
                                         ?>
                                     </h5>
                                 </a>
@@ -239,7 +240,13 @@ include('fetch/find_item_base_on_id.php')
                     foreach ($new_products as $new_product) {
                     ?>
                         <div class="item">
-                            <h5><?php print $new_product[1]; ?></h5>
+                            <a href="../store/store1_p1.php?productid=<?php echo $new_product[0]; ?>">
+                                <h5>
+                                    <?php print $new_product[1];
+                                    $_SESSION['productid'] = $new_product[0]; 
+                                    ?>
+                                </h5>
+                            </a>
                             <div class="img">
                                 <img src="#new_product_logo_img" alt="new_product_logo">
                             </div>
@@ -443,7 +450,13 @@ include('fetch/find_item_base_on_id.php')
                     foreach ($featured_products as $featured_product) {
                     ?>
                         <div class="item">
-                            <h5><?php print $featured_product[1]; ?></h5>
+                            <a href="../store/store1_p1.php?productid=<?php echo $new_product[0]; ?>">
+                                <h5>
+                                    <?php print $new_product[1];
+                                    $_SESSION['productid'] = $new_product[0]; 
+                                    ?>
+                                </h5>
+                            </a>
                             <div class="img">
                                 <img src="#featured_product_logo_img" alt="featured_product_logo">
                             </div>
