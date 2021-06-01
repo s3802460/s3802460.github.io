@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../css/mall/style.css">
     <link rel="stylesheet" href="../css/cart/cart.css">
     <script src="../JavaScript/addtocart.js"></script>
+    <?php 
+        session_start();
+        $user = $_SESSION["user"];
+    ?>
 </head>
 <body>
     <!-- Header -->
@@ -63,7 +67,18 @@
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">$0</span>
             </div>
-            <a href="../store/thankyou.html" class="order-button">Order</a>
+            <?php
+            if(!$user){
+            ?>
+                <a href="../account/register.php" class="order-button">Order (Not Registered)</a>
+                
+            <?php
+            }else{
+            ?>
+                <a href="../store/thankyou.html" class="order-button">Order</a>
+            <?php
+            }
+            ?>
             <a href="../store/store_home.php" class="continue-button">Continue Shopping</a>
         </section>
     </main>

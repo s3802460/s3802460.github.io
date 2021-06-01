@@ -60,7 +60,7 @@ include('look_up_product_info.php');
             <h1 class='product-title'><?php print $productpage[1];?></h1>
             <h2 class='product-price'>$<?php print $productpage[2];?></h2>
             <a href="#" class="add-button">Add To Cart</a>
-            <a href="../store/mycart.html" class="buy-button">Buy Now</a>
+            <a href="../store/mycart.php" class="buy-button">Buy Now</a>
             <div>
                 <p>Description</p>
             </div>
@@ -127,7 +127,7 @@ include('look_up_product_info.php');
                                 <?php print $new_product[1];
                                 $_SESSION['productid'] = $new_product[0]; 
                                 ?>
-                                </h5>
+                            </h5>
                         </a>
                         <div class="img">
                             <img src="#featured_product_logo_img" alt="featured_product_logo">
